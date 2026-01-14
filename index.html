@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prismatic Labs - Posts Instagram</title>
+    <title>Instagram Posts - Prismatic Labs | Coleção Completa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -11,182 +11,371 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
-            color: #fff;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #16213e 100%);
+            color: #e0e0e0;
             min-height: 100vh;
+            padding: 40px 20px;
         }
         .container { max-width: 1400px; margin: 0 auto; }
-        h1 {
-            font-size: 3rem;
-            font-weight: 900;
+        .header {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
             background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
         }
         .subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 3rem;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 10px;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(168,85,247,0.3);
-            transition: all 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #A855F7;
-            box-shadow: 0 10px 40px rgba(168,85,247,0.3);
-        }
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #06D9D7;
-        }
-        .card p {
-            opacity: 0.8;
-            margin-bottom: 1rem;
+        .description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 800px;
+            margin: 0 auto;
             line-height: 1.6;
         }
-        .btn {
+        .badge {
             display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(168,85,247,0.5);
+            background: rgba(6, 217, 215, 0.2);
+            color: #06D9D7;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 2px solid #06D9D7;
+            margin-bottom: 20px;
         }
         .instructions {
-            background: rgba(255,0,110,0.1);
-            border: 1px solid rgba(255,0,110,0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            text-align: center;
         }
-        .instructions h3 {
-            color: #FF006E;
-            margin-bottom: 1rem;
+        .instructions h2 {
+            font-size: 24px;
+            color: #A855F7;
+            margin-bottom: 15px;
         }
-        .instructions ol {
-            margin-left: 1.5rem;
-            line-height: 2;
+        .instructions p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        .instructions-list {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .instruction-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .instruction-item span:first-child {
+            font-size: 24px;
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .post-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            border-color: #A855F7;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+        .post-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .post-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .post-type {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.2);
+            color: #A855F7;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .post-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .post-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #06D9D7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .post-link:hover {
+            color: #A855F7;
         }
         .footer {
             text-align: center;
-            margin-top: 4rem;
-            opacity: 0.7;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #A855F7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .footer-link:hover {
+            color: #06D9D7;
+        }
+        @media (max-width: 768px) {
+            .logo { font-size: 36px; }
+            .subtitle { font-size: 20px; }
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>PRISMATIC LABS</h1>
-        <p class="subtitle">📱 Posts Instagram - Janeiro 2026</p>
-        
-        <div class="instructions">
-            <h3>📸 Como usar:</h3>
-            <ol>
-                <li>Clique no botão "Abrir Post"</li>
-                <li>O post abrirá em 1080x1080px (formato Instagram)</li>
-                <li>Tire screenshot (Print Screen ou Cmd+Shift+4 no Mac)</li>
-                <li>Poste no Instagram!</li>
-            </ol>
-        </div>
+        <header class="header">
+            <div class="badge">🚀 12 POSTS PRONTOS</div>
+            <h1 class="logo">PRISMATIC LABS</h1>
+            <p class="subtitle">Coleção Completa - Instagram Posts</p>
+            <p class="description">
+                Posts HTML 1080x1080px otimizados para captura de leads e vendas.<br>
+                Design dark mode + neon profissional, pronto para screenshot e publicação.
+            </p>
+        </header>
 
-        <div class="grid">
-            <div class="card">
-                <h2>Post 01 - Apresentação</h2>
-                <p>Primeira impressão da Prismatic Labs. Apresenta a empresa e proposta de valor.</p>
-                <a href="post-01-apresentacao.html" class="btn" target="_blank">Abrir Post</a>
+        <section class="instructions">
+            <h2>📸 Como Usar</h2>
+            <p>Clique em qualquer post abaixo para abri-lo em tela cheia, depois tire screenshot (1080x1080px) e publique no Instagram!</p>
+            <div class="instructions-list">
+                <div class="instruction-item">
+                    <span>💻</span>
+                    <span>Abrir no navegador</span>
+                </div>
+                <div class="instruction-item">
+                    <span>📷</span>
+                    <span>Tirar screenshot</span>
+                </div>
+                <div class="instruction-item">
+                    <span>📤</span>
+                    <span>Publicar no Instagram</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts-grid">
+            <!-- Post 01 -->
+            <div class="post-card" onclick="window.open('post-01-apresentacao.html', '_blank')">
+                <div class="post-number">01</div>
+                <div class="post-type">👋 ABERTURA</div>
+                <h3 class="post-title">Apresentação Prismatic Labs</h3>
+                <p class="post-description">Post inaugural para apresentar a empresa e o diferencial dark mode + neon.</p>
+                <a href="post-01-apresentacao.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 02 - Antes/Depois</h2>
-                <p>Transformação visual de uma landing page. Mostra o poder do design.</p>
-                <a href="post-02-antes-depois.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 02 -->
+            <div class="post-card" onclick="window.open('post-02-antes-depois.html', '_blank')">
+                <div class="post-number">02</div>
+                <div class="post-type">⚡ AUTORIDADE</div>
+                <h3 class="post-title">Antes/Depois Visual</h3>
+                <p class="post-description">Comparação visual entre design comum vs. dark mode premium.</p>
+                <a href="post-02-antes-depois.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 03 - 5 Erros Fatais</h2>
-                <p>Conteúdo educativo sobre erros comuns em landing pages.</p>
-                <a href="post-03-5-erros.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 03 -->
+            <div class="post-card" onclick="window.open('post-03-5-erros.html', '_blank')">
+                <div class="post-number">03</div>
+                <div class="post-type">💡 EDUCATIVO</div>
+                <h3 class="post-title">5 Erros Fatais em Landing Pages</h3>
+                <p class="post-description">Conteúdo educativo que gera engajamento e autoridade.</p>
+                <a href="post-03-5-erros.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 04 - Case Mariana</h2>
-                <p>Depoimento da cliente Mariana Silva. Social proof poderoso.</p>
-                <a href="post-04-case-mariana.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 04 -->
+            <div class="post-card" onclick="window.open('post-04-case-sucesso.html', '_blank')">
+                <div class="post-number">04</div>
+                <div class="post-type">🎯 SOCIAL PROOF</div>
+                <h3 class="post-title">Case Mariana Silva</h3>
+                <p class="post-description">Depoimento de cliente satisfeita (infoprodutora).</p>
+                <a href="post-04-case-sucesso.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 05 - Pacote PRO</h2>
-                <p>Apresentação do pacote mais popular. CTA direto para vendas.</p>
-                <a href="post-05-pacote-pro.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 05 -->
+            <div class="post-card" onclick="window.open('post-05-pacote-pro.html', '_blank')">
+                <div class="post-number">05</div>
+                <div class="post-type">💰 VENDAS</div>
+                <h3 class="post-title">Pacote PRO - R$3.500</h3>
+                <p class="post-description">Apresentação do pacote mais popular com features e preço.</p>
+                <a href="post-05-pacote-pro.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 06 - Processo</h2>
-                <p>Como trabalhamos em 4 etapas. Transparência e confiança.</p>
-                <a href="post-06-processo.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 06 -->
+            <div class="post-card" onclick="window.open('post-06-processo.html', '_blank')">
+                <div class="post-number">06</div>
+                <div class="post-type">🛠️ PROCESSO</div>
+                <h3 class="post-title">4 Etapas do Lançamento</h3>
+                <p class="post-description">Mostra transparência no processo de trabalho.</p>
+                <a href="post-06-processo.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 07 - Dark Mode</h2>
-                <p>Por que dark mode aumenta conversão. Educativo técnico.</p>
-                <a href="post-07-dark-mode.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 07 -->
+            <div class="post-card" onclick="window.open('post-07-dark-mode.html', '_blank')">
+                <div class="post-number">07</div>
+                <div class="post-type">💡 EDUCATIVO</div>
+                <h3 class="post-title">Por que Dark Mode?</h3>
+                <p class="post-description">Explica benefícios do dark mode para conversão.</p>
+                <a href="post-07-dark-mode.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 08 - Depoimento Ricardo</h2>
-                <p>Case de sucesso do e-commerce NEON Streetwear. +67% vendas.</p>
-                <a href="post-08-depoimento-ricardo.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 08 -->
+            <div class="post-card" onclick="window.open('post-08-depoimento.html', '_blank')">
+                <div class="post-number">08</div>
+                <div class="post-type">🎯 SOCIAL PROOF</div>
+                <h3 class="post-title">Case Ricardo Costa - +67%</h3>
+                <p class="post-description">Depoimento com resultado quantitativo (e-commerce).</p>
+                <a href="post-08-depoimento.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 09 - Resultados</h2>
-                <p>Números que impressionam. 40%+ conversão, PageSpeed 90+.</p>
-                <a href="post-09-resultados.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 09 -->
+            <div class="post-card" onclick="window.open('post-09-resultados.html', '_blank')">
+                <div class="post-number">09</div>
+                <div class="post-type">📊 NÚMEROS</div>
+                <h3 class="post-title">Resultados Comprovados</h3>
+                <p class="post-description">Grid com estatísticas reais dos projetos.</p>
+                <a href="post-09-resultados.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 10 - Diferenciais</h2>
-                <p>Por que escolher Prismatic Labs? 6 motivos claros.</p>
-                <a href="post-10-diferenciais.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 10 -->
+            <div class="post-card" onclick="window.open('post-10-porque-escolher.html', '_blank')">
+                <div class="post-number">10</div>
+                <div class="post-type">✨ DIFERENCIAIS</div>
+                <h3 class="post-title">5 Motivos para Escolher</h3>
+                <p class="post-description">Lista os diferenciais competitivos da Prismatic Labs.</p>
+                <a href="post-10-porque-escolher.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 11 - Portfolio</h2>
-                <p>Showcase de projetos. Visual impactante com cases.</p>
-                <a href="post-11-portfolio.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 11 -->
+            <div class="post-card" onclick="window.open('post-11-portfolio.html', '_blank')">
+                <div class="post-number">11</div>
+                <div class="post-type">🚀 PORTFÓLIO</div>
+                <h3 class="post-title">Nossos Projetos</h3>
+                <p class="post-description">Apresenta os 3 cases de sucesso com resultados.</p>
+                <a href="post-11-portfolio.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
 
-            <div class="card">
-                <h2>Post 12 - CTA WhatsApp</h2>
-                <p>Chamada direta para ação. Urgência e conversão.</p>
-                <a href="post-12-cta-whatsapp.html" class="btn" target="_blank">Abrir Post</a>
+            <!-- Post 12 -->
+            <div class="post-card" onclick="window.open('post-12-cta-whatsapp.html', '_blank')">
+                <div class="post-number">12</div>
+                <div class="post-type">🔥 CTA DIRETO</div>
+                <h3 class="post-title">WhatsApp - Fale Agora</h3>
+                <p class="post-description">Post de conversão direta com número do WhatsApp destacado.</p>
+                <a href="post-12-cta-whatsapp.html" class="post-link" target="_blank">
+                    Abrir post →
+                </a>
             </div>
-        </div>
+        </section>
 
-        <div class="footer">
-            <p>© 2026 Prismatic Labs | Landing Pages de Alta Conversão</p>
-        </div>
+        <footer class="footer">
+            <p class="footer-text">
+                Coleção criada para acelerar a aquisição do primeiro cliente.<br>
+                Design otimizado para captura de leads e conversão em vendas.
+            </p>
+            <div class="footer-links">
+                <a href="https://hoffmannss.github.io/prismatic-labs-2026" class="footer-link" target="_blank">
+                    🌐 Site Institucional
+                </a>
+                <a href="https://github.com/Hoffmannss/prismatic-labs-2026" class="footer-link" target="_blank">
+                    💻 Repositório Principal
+                </a>
+                <a href="https://wa.me/5548984580234" class="footer-link" target="_blank">
+                    📱 WhatsApp
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
