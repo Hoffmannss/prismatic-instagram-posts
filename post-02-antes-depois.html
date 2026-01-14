@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 02 - Antes/Depois</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 60px 40px;
+            border-bottom: 2px solid rgba(168,85,247,0.3);
+        }
+        .title {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: rgba(255,255,255,0.7);
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: calc(100% - 200px);
+        }
+        .side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+        }
+        .side-left {
+            background: rgba(255,255,255,0.02);
+            border-right: 2px solid rgba(168,85,247,0.3);
+        }
+        .side-right {
+            background: rgba(168,85,247,0.05);
+        }
+        .label {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            padding: 15px 40px;
+            border-radius: 50px;
+        }
+        .label-before {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        .label-after {
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            color: #ffffff;
+        }
+        .mockup {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .mockup-before {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .mockup-after {
+            background: linear-gradient(135deg, #0a0a0a, #1a0a2e);
+            color: #fff;
+            border: 2px solid #A855F7;
+            box-shadow: 0 20px 60px rgba(168,85,247,0.5);
+        }
+        .mockup-text {
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .stats-list {
+            list-style: none;
+            font-size: 20px;
+            line-height: 2;
+        }
+        .stats-list li {
+            color: rgba(255,255,255,0.8);
+        }
+        .stats-before {
+            opacity: 0.5;
+        }
+        .stats-after li {
+            color: #06D9D7;
+            font-weight: 600;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            background: rgba(168,85,247,0.1);
+            border-top: 1px solid rgba(168,85,247,0.3);
+        }
+        .footer-text {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="header">
+            <h1 class="title">A Transformação</h1>
+            <p class="subtitle">O poder do design dark mode + neon</p>
+        </div>
+        <div class="comparison">
+            <div class="side side-left">
+                <div class="label label-before">ANTES</div>
+                <div class="mockup mockup-before">
+                    <div class="mockup-text">
+                        <strong style="font-size: 24px;">Landing Page</strong><br><br>
+                        Design genérico<br>
+                        Cores sem vida<br>
+                        Zero personalidade
+                    </div>
+                </div>
+                <ul class="stats-list stats-before">
+                    <li>❌ Conversão: 8%</li>
+                    <li>❌ PageSpeed: 45</li>
+                    <li>❌ Taxa de rejeição: 78%</li>
+                </ul>
+            </div>
+            <div class="side side-right">
+                <div class="label label-after">DEPOIS</div>
+                <div class="mockup mockup-after">
+                    <div class="mockup-text">
+                        <strong style="font-size: 24px; background: linear-gradient(45deg, #A855F7, #06D9D7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">PRISMATIC</strong><br><br>
+                        Design exclusivo<br>
+                        Neon vibrante<br>
+                        Marca forte
+                    </div>
+                </div>
+                <ul class="stats-list stats-after">
+                    <li>✅ Conversão: 42%</li>
+                    <li>✅ PageSpeed: 94</li>
+                    <li>✅ Taxa de rejeição: 23%</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footer-text">🚀 Seu projeto merece este upgrade | WhatsApp: +55 48 98458-0234</p>
+        </div>
+    </div>
+</body>
+</html>

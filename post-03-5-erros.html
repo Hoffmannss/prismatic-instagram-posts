@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 03 - 5 Erros Fatais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            padding: 80px;
+        }
+        .gradient-corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle at top right, rgba(255,0,110,0.2), transparent);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,0,110,0.2);
+            color: #FF006E;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .highlight {
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: rgba(255,255,255,0.7);
+        }
+        .errors {
+            position: relative;
+            z-index: 2;
+        }
+        .error-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid #FF006E;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .error-item:hover {
+            background: rgba(255,0,110,0.1);
+            transform: translateX(10px);
+        }
+        .error-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FF006E;
+            margin-bottom: 10px;
+        }
+        .error-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .error-description {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            right: 80px;
+            text-align: center;
+            padding: 30px;
+            background: rgba(168,85,247,0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(168,85,247,0.3);
+        }
+        .footer-text {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .footer-text span {
+            color: #06D9D7;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="gradient-corner"></div>
+        <div class="header">
+            <div class="badge">⚠️ ATENÇÃO</div>
+            <h1 class="title">
+                5 Erros <span class="highlight">Fatais</span><br>
+                em Landing Pages
+            </h1>
+            <p class="subtitle">Que matam suas vendas (e você nem percebe)</p>
+        </div>
+        <div class="errors">
+            <div class="error-item">
+                <div class="error-number">01.</div>
+                <h3 class="error-title">Carregamento Lento</h3>
+                <p class="error-description">40% dos visitantes abandonam sites que demoram +3s</p>
+            </div>
+            <div class="error-item">
+                <div class="error-number">02.</div>
+                <h3 class="error-title">Não é Mobile-First</h3>
+                <p class="error-description">70% do tráfego vem do celular. Seu site funciona bem?</p>
+            </div>
+            <div class="error-item">
+                <div class="error-number">03.</div>
+                <h3 class="error-title">CTA Invisível</h3>
+                <p class="error-description">Se não grita "CLIQUE AQUI", você está perdendo dinheiro</p>
+            </div>
+            <div class="error-item">
+                <div class="error-number">04.</div>
+                <h3 class="error-title">Zero Social Proof</h3>
+                <p class="error-description">Sem depoimentos = Sem confiança = Sem vendas</p>
+            </div>
+            <div class="error-item">
+                <div class="error-number">05.</div>
+                <h3 class="error-title">Design Genérico</h3>
+                <p class="error-description">Parece todo mundo. Não se destaca. É esquecível.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footer-text">Na Prismatic Labs, corrigimos todos esses erros | <span>+55 48 98458-0234</span></p>
+        </div>
+    </div>
+</body>
+</html>

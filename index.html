@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prismatic Labs - Posts Instagram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+            color: #fff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(168,85,247,0.3);
+            transition: all 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #A855F7;
+            box-shadow: 0 10px 40px rgba(168,85,247,0.3);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #06D9D7;
+        }
+        .card p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(168,85,247,0.5);
+        }
+        .instructions {
+            background: rgba(255,0,110,0.1);
+            border: 1px solid rgba(255,0,110,0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        .instructions h3 {
+            color: #FF006E;
+            margin-bottom: 1rem;
+        }
+        .instructions ol {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PRISMATIC LABS</h1>
+        <p class="subtitle">📱 Posts Instagram - Janeiro 2026</p>
+        
+        <div class="instructions">
+            <h3>📸 Como usar:</h3>
+            <ol>
+                <li>Clique no botão "Abrir Post"</li>
+                <li>O post abrirá em 1080x1080px (formato Instagram)</li>
+                <li>Tire screenshot (Print Screen ou Cmd+Shift+4 no Mac)</li>
+                <li>Poste no Instagram!</li>
+            </ol>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Post 01 - Apresentação</h2>
+                <p>Primeira impressão da Prismatic Labs. Apresenta a empresa e proposta de valor.</p>
+                <a href="post-01-apresentacao.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 02 - Antes/Depois</h2>
+                <p>Transformação visual de uma landing page. Mostra o poder do design.</p>
+                <a href="post-02-antes-depois.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 03 - 5 Erros Fatais</h2>
+                <p>Conteúdo educativo sobre erros comuns em landing pages.</p>
+                <a href="post-03-5-erros.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 04 - Case Mariana</h2>
+                <p>Depoimento da cliente Mariana Silva. Social proof poderoso.</p>
+                <a href="post-04-case-mariana.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 05 - Pacote PRO</h2>
+                <p>Apresentação do pacote mais popular. CTA direto para vendas.</p>
+                <a href="post-05-pacote-pro.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 06 - Processo</h2>
+                <p>Como trabalhamos em 4 etapas. Transparência e confiança.</p>
+                <a href="post-06-processo.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 07 - Dark Mode</h2>
+                <p>Por que dark mode aumenta conversão. Educativo técnico.</p>
+                <a href="post-07-dark-mode.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 08 - Depoimento Ricardo</h2>
+                <p>Case de sucesso do e-commerce NEON Streetwear. +67% vendas.</p>
+                <a href="post-08-depoimento-ricardo.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 09 - Resultados</h2>
+                <p>Números que impressionam. 40%+ conversão, PageSpeed 90+.</p>
+                <a href="post-09-resultados.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 10 - Diferenciais</h2>
+                <p>Por que escolher Prismatic Labs? 6 motivos claros.</p>
+                <a href="post-10-diferenciais.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 11 - Portfolio</h2>
+                <p>Showcase de projetos. Visual impactante com cases.</p>
+                <a href="post-11-portfolio.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+
+            <div class="card">
+                <h2>Post 12 - CTA WhatsApp</h2>
+                <p>Chamada direta para ação. Urgência e conversão.</p>
+                <a href="post-12-cta-whatsapp.html" class="btn" target="_blank">Abrir Post</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Prismatic Labs | Landing Pages de Alta Conversão</p>
+        </div>
+    </div>
+</body>
+</html>
