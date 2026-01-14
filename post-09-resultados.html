@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 09 - Resultados Comprovados | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 100px 80px 80px 80px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+        .title {
+            font-size: 68px;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF006E, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+        .stats-grid {
+            padding: 0 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            border-color: #A855F7;
+            background: rgba(168, 85, 247, 0.05);
+        }
+        .stat-number {
+            font-size: 96px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .stat-label {
+            font-size: 26px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        .highlight-box {
+            margin: 0 80px;
+            background: rgba(255, 0, 110, 0.1);
+            border: 2px solid #FF006E;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+        }
+        .highlight-text {
+            font-size: 36px;
+            color: #FFFFFF;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .highlight-accent {
+            color: #FF006E;
+            font-weight: 900;
+        }
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta {
+            font-size: 24px;
+            color: #FF006E;
+            font-weight: 900;
+        }
+        /* Geometric decoration */
+        .decoration {
+            position: absolute;
+            border: 3px solid;
+            opacity: 0.1;
+        }
+        .deco-1 {
+            width: 400px;
+            height: 400px;
+            border-color: #FF006E;
+            border-radius: 50%;
+            top: -150px;
+            left: -150px;
+        }
+        .deco-2 {
+            width: 350px;
+            height: 350px;
+            border-color: #A855F7;
+            transform: rotate(45deg);
+            bottom: -120px;
+            right: -120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
+        <div class="header">
+            <div class="badge">📊 NÚMEROS REAIS</div>
+            <h1 class="title">
+                <span class="gradient-text">Resultados</span><br>
+                Comprovados
+            </h1>
+            <p class="subtitle">Média dos nossos projetos</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">42%</div>
+                <div class="stat-label">Taxa de<br>Conversão</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">87%</div>
+                <div class="stat-label">Clientes<br>Satisfeitos</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Dias para<br>Entrega</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Tempo de<br>Resposta</div>
+            </div>
+        </div>
+        
+        <div class="highlight-box">
+            <div class="highlight-text">
+                Landing pages que <span class="highlight-accent">geram resultados,</span><br>
+                não apenas likes
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="cta">QUERO ESSES RESULTADOS →</div>
+        </div>
+    </div>
+</body>
+</html>

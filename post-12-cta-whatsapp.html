@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 12 - CTA WhatsApp | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+        }
+        .badge {
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 16px 36px;
+            border-radius: 40px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .main-title {
+            font-size: 80px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF006E, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% auto;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+        .white-text {
+            color: #FFFFFF;
+        }
+        .subtitle {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.5;
+        }
+        .whatsapp-box {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 217, 215, 0.2));
+            border: 3px solid #25D366;
+            border-radius: 30px;
+            padding: 50px 60px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(37, 211, 102, 0.6); }
+        }
+        .whatsapp-icon {
+            font-size: 80px;
+        }
+        .whatsapp-content {
+            flex: 1;
+        }
+        .whatsapp-label {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .whatsapp-number {
+            font-size: 48px;
+            color: #25D366;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .features {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .check {
+            font-size: 32px;
+            color: #06D9D7;
+        }
+        .urgency {
+            text-align: center;
+            font-size: 28px;
+            color: #FF006E;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Geometric decoration */
+        .decoration {
+            position: absolute;
+            border: 3px solid;
+            opacity: 0.15;
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .deco-1 {
+            width: 400px;
+            height: 400px;
+            border-color: #A855F7;
+            border-radius: 50%;
+            top: -150px;
+            left: -150px;
+        }
+        .deco-2 {
+            width: 350px;
+            height: 350px;
+            border-color: #06D9D7;
+            border-radius: 50%;
+            bottom: -120px;
+            right: -120px;
+            animation-direction: reverse;
+        }
+        .deco-3 {
+            width: 250px;
+            height: 250px;
+            border-color: #FF006E;
+            transform: rotate(45deg);
+            top: 50%;
+            right: -80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        <div class="decoration deco-3"></div>
+        
+        <div class="badge">🚀 PRONTO PARA DECOLAR?</div>
+        
+        <h1 class="main-title">
+            <span class="white-text">Vamos criar sua</span><br>
+            <span class="gradient-text">Landing Page?</span>
+        </h1>
+        
+        <p class="subtitle">
+            Landing pages dark mode + neon que<br>
+            convertem 40%+ dos seus visitantes
+        </p>
+        
+        <div class="whatsapp-box">
+            <div class="whatsapp-icon">📱</div>
+            <div class="whatsapp-content">
+                <div class="whatsapp-label">Fale diretamente comigo:</div>
+                <div class="whatsapp-number">+55 48 98458-0234</div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <span class="check">✓</span>
+                <span>Resposta em 24h</span>
+            </div>
+            <div class="feature">
+                <span class="check">✓</span>
+                <span>Proposta personalizada</span>
+            </div>
+            <div class="feature">
+                <span class="check">✓</span>
+                <span>Orçamento sem compromisso</span>
+            </div>
+        </div>
+        
+        <div class="urgency">
+            🔥 Vagas limitadas para Janeiro/2026
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+        </div>
+    </div>
+</body>
+</html>

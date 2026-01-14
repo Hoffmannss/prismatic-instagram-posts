@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 10 - Por que Escolher | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 100px 80px 60px 80px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.2);
+            color: #A855F7;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border: 2px solid #A855F7;
+            margin-bottom: 40px;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.2;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reasons {
+            padding: 0 80px;
+            display: grid;
+            gap: 30px;
+        }
+        .reason {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: all 0.3s;
+        }
+        .reason:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(168, 85, 247, 0.05);
+        }
+        .reason-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 900;
+            color: #000000;
+            flex-shrink: 0;
+        }
+        .reason-content {
+            flex: 1;
+        }
+        .reason-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .reason-text {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+        .highlight {
+            color: #06D9D7;
+            font-weight: 700;
+        }
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta {
+            font-size: 22px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .cta-accent {
+            color: #FF006E;
+            font-weight: 900;
+        }
+        /* Geometric decoration */
+        .decoration {
+            position: absolute;
+            border: 3px solid;
+            opacity: 0.08;
+        }
+        .deco-1 {
+            width: 320px;
+            height: 320px;
+            border-color: #A855F7;
+            border-radius: 50%;
+            top: -120px;
+            left: -120px;
+        }
+        .deco-2 {
+            width: 280px;
+            height: 280px;
+            border-color: #06D9D7;
+            transform: rotate(45deg);
+            bottom: -100px;
+            right: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
+        <div class="header">
+            <div class="badge">✨ DIFERENCIAIS</div>
+            <h1 class="title">
+                Por que escolher<br>
+                <span class="gradient-text">Prismatic Labs?</span>
+            </h1>
+        </div>
+        
+        <div class="reasons">
+            <div class="reason">
+                <div class="reason-number">01</div>
+                <div class="reason-content">
+                    <div class="reason-title">Especialização</div>
+                    <div class="reason-text">Só fazemos <span class="highlight">landing pages de alta conversão</span></div>
+                </div>
+            </div>
+            
+            <div class="reason">
+                <div class="reason-number">02</div>
+                <div class="reason-content">
+                    <div class="reason-title">Entrega Rápida</div>
+                    <div class="reason-text">Projeto completo em <span class="highlight">10-15 dias úteis</span></div>
+                </div>
+            </div>
+            
+            <div class="reason">
+                <div class="reason-number">03</div>
+                <div class="reason-content">
+                    <div class="reason-title">Dark Mode Expert</div>
+                    <div class="reason-text">Design que <span class="highlight">converte 40%+</span> comprovado</div>
+                </div>
+            </div>
+            
+            <div class="reason">
+                <div class="reason-number">04</div>
+                <div class="reason-content">
+                    <div class="reason-title">Suporte Incluso</div>
+                    <div class="reason-text"><span class="highlight">30 dias de garantia</span> após entrega</div>
+                </div>
+            </div>
+            
+            <div class="reason">
+                <div class="reason-number">05</div>
+                <div class="reason-content">
+                    <div class="reason-title">100% Customizável</div>
+                    <div class="reason-text">Design único, <span class="highlight">nunca templates prontos</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="cta">Florianópolis, <span class="cta-accent">Brasil</span></div>
+        </div>
+    </div>
+</body>
+</html>
