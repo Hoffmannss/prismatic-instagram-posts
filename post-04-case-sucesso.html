@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 04 - Case de Sucesso | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .badge {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #A855F7;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            border: 2px solid #A855F7;
+        }
+        .content {
+            padding: 180px 80px 80px 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .quote-icon {
+            font-size: 120px;
+            color: #A855F7;
+            line-height: 1;
+            margin-bottom: 30px;
+            opacity: 0.3;
+        }
+        .quote-text {
+            font-size: 42px;
+            line-height: 1.4;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-bottom: 50px;
+            flex: 1;
+        }
+        .highlight {
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            flex-shrink: 0;
+        }
+        .author-info {
+            flex: 1;
+        }
+        .author-name {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .author-role {
+            font-size: 22px;
+            color: #06D9D7;
+            font-weight: 600;
+        }
+        .stars {
+            font-size: 28px;
+            margin-top: 8px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta {
+            font-size: 20px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .cta-highlight {
+            color: #FF006E;
+            font-weight: 900;
+        }
+        /* Geometric decoration */
+        .decoration {
+            position: absolute;
+            border: 3px solid;
+            opacity: 0.15;
+        }
+        .deco-1 {
+            width: 300px;
+            height: 300px;
+            border-color: #A855F7;
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .deco-2 {
+            width: 200px;
+            height: 200px;
+            border-color: #06D9D7;
+            transform: rotate(45deg);
+            bottom: 400px;
+            left: -80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
+        <div class="badge">🎯 CASE DE SUCESSO</div>
+        
+        <div class="content">
+            <div class="quote-icon">"</div>
+            <div class="quote-text">
+                Contratei a Prismatic Labs para minha landing page de curso e ficou <span class="highlight">perfeita!</span> Em 7 dias estava no ar e já começou a gerar conversões.
+            </div>
+            
+            <div class="author-section">
+                <div class="author-avatar">💜</div>
+                <div class="author-info">
+                    <div class="author-name">Mariana Silva</div>
+                    <div class="author-role">Criadora de Conteúdo</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="cta">Seja o próximo → <span class="cta-highlight">WhatsApp</span></div>
+        </div>
+    </div>
+</body>
+</html>
