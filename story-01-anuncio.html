@@ -30,32 +30,49 @@
         /* Efeito Neon Background */
         .neon-bg {
             position: absolute;
-            width: 800px;
-            height: 800px;
+            width: 700px;
+            height: 700px;
             border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.4;
+            filter: blur(130px);
+            opacity: 0.35;
+            z-index: 1;
         }
         .neon-1 {
             background: #A855F7;
-            top: -200px;
-            left: -200px;
+            top: -150px;
+            left: -150px;
             animation: pulse1 4s ease-in-out infinite;
         }
         .neon-2 {
             background: #06D9D7;
-            bottom: -200px;
-            right: -200px;
+            bottom: -150px;
+            right: -150px;
             animation: pulse2 4s ease-in-out infinite;
         }
         
         @keyframes pulse1 {
-            0%, 100% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.1); opacity: 0.6; }
+            0%, 100% { transform: scale(1); opacity: 0.35; }
+            50% { transform: scale(1.1); opacity: 0.5; }
         }
         @keyframes pulse2 {
-            0%, 100% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.2); opacity: 0.5; }
+            0%, 100% { transform: scale(1); opacity: 0.35; }
+            50% { transform: scale(1.2); opacity: 0.45; }
+        }
+        
+        /* Top Badge */
+        .badge {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000;
+            padding: 18px 55px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 38px;
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.6);
+            z-index: 20;
         }
         
         /* Content */
@@ -67,39 +84,39 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 120px 80px;
+            padding: 200px 90px 120px 90px;
             text-align: center;
         }
         
         .emoji {
-            font-size: 180px;
-            margin-bottom: 60px;
+            font-size: 150px;
+            margin-bottom: 50px;
             animation: bounce 2s ease-in-out infinite;
         }
         
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
         
         .headline {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 120px;
+            font-size: 105px;
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 40px;
+            line-height: 1.05;
+            margin-bottom: 35px;
             background: linear-gradient(135deg, #FFFFFF 0%, #A855F7 50%, #06D9D7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
-            letter-spacing: -3px;
+            letter-spacing: -2px;
         }
         
         .subheadline {
-            font-size: 80px;
+            font-size: 70px;
             font-weight: 900;
             color: #FFFFFF;
-            margin-bottom: 80px;
+            margin-bottom: 65px;
             text-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
         }
         
@@ -107,17 +124,19 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 2px solid rgba(168, 85, 247, 0.3);
-            border-radius: 40px;
-            padding: 60px;
-            margin-bottom: 60px;
+            border-radius: 35px;
+            padding: 50px 55px;
+            margin-bottom: 45px;
+            width: 100%;
+            max-width: 900px;
         }
         
         .text-line {
-            font-size: 58px;
+            font-size: 52px;
             font-weight: 700;
             color: #FFFFFF;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            line-height: 1.4;
+            margin-bottom: 15px;
         }
         
         .text-line:last-child {
@@ -130,31 +149,16 @@
         }
         
         .cta {
-            font-size: 64px;
+            font-size: 58px;
             font-weight: 900;
             color: #06D9D7;
-            margin-top: 80px;
+            margin-top: 60px;
             animation: glow 2s ease-in-out infinite;
         }
         
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 20px rgba(6, 217, 215, 0.5); }
             50% { text-shadow: 0 0 40px rgba(6, 217, 215, 1); }
-        }
-        
-        /* Top Badge */
-        .badge {
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #A855F7, #06D9D7);
-            color: #000;
-            padding: 20px 60px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 40px;
-            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.6);
         }
     </style>
 </head>

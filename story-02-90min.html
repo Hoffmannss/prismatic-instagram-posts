@@ -30,30 +30,47 @@
         /* Urgência - Vermelho Neon */
         .neon-bg {
             position: absolute;
-            width: 900px;
-            height: 900px;
+            width: 800px;
+            height: 800px;
             border-radius: 50%;
-            filter: blur(180px);
-            opacity: 0.5;
+            filter: blur(160px);
+            opacity: 0.4;
+            z-index: 1;
         }
         .neon-1 {
             background: #FF0066;
-            top: -250px;
+            top: -200px;
             left: 50%;
             transform: translateX(-50%);
             animation: urgent-pulse 1.5s ease-in-out infinite;
         }
         .neon-2 {
             background: #FF6600;
-            bottom: -250px;
+            bottom: -200px;
             left: 50%;
             transform: translateX(-50%);
             animation: urgent-pulse 1.5s ease-in-out infinite 0.75s;
         }
         
         @keyframes urgent-pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
-            50% { transform: translateX(-50%) scale(1.15); opacity: 0.7; }
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* Top Badge */
+        .badge {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FF0066, #FF6600);
+            color: #FFF;
+            padding: 18px 55px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 38px;
+            box-shadow: 0 10px 40px rgba(255, 0, 102, 0.6);
+            z-index: 20;
         }
         
         /* Content */
@@ -65,39 +82,39 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 120px 80px;
+            padding: 200px 85px 120px 85px;
             text-align: center;
         }
         
         .clock {
-            font-size: 220px;
-            margin-bottom: 80px;
+            font-size: 180px;
+            margin-bottom: 60px;
             animation: tick 1s ease-in-out infinite;
-            filter: drop-shadow(0 0 60px rgba(255, 102, 0, 0.8));
+            filter: drop-shadow(0 0 50px rgba(255, 102, 0, 0.7));
         }
         
         @keyframes tick {
             0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
+            50% { transform: scale(1.08) rotate(4deg); }
         }
         
         .headline {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 100px;
+            font-size: 90px;
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             color: #FFFFFF;
             text-transform: uppercase;
             letter-spacing: -2px;
-            text-shadow: 0 0 50px rgba(255, 102, 0, 0.9);
+            text-shadow: 0 0 45px rgba(255, 102, 0, 0.8);
         }
         
         .countdown {
-            font-size: 160px;
+            font-size: 140px;
             font-weight: 900;
             color: #FF6600;
-            margin-bottom: 80px;
+            margin-bottom: 70px;
             text-shadow: 0 0 60px rgba(255, 102, 0, 1),
                          0 0 100px rgba(255, 0, 102, 0.6);
             animation: countdown-glow 1s ease-in-out infinite;
@@ -105,25 +122,27 @@
         
         @keyframes countdown-glow {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.04); }
         }
         
         .text-block {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             border: 3px solid rgba(255, 102, 0, 0.4);
-            border-radius: 40px;
-            padding: 50px 60px;
-            margin-bottom: 50px;
+            border-radius: 35px;
+            padding: 45px 55px;
+            margin-bottom: 40px;
             box-shadow: 0 0 40px rgba(255, 102, 0, 0.3);
+            width: 100%;
+            max-width: 900px;
         }
         
         .text-line {
-            font-size: 54px;
+            font-size: 50px;
             font-weight: 700;
             color: #FFFFFF;
-            line-height: 1.4;
-            margin-bottom: 15px;
+            line-height: 1.35;
+            margin-bottom: 12px;
         }
         
         .text-line:last-child {
@@ -138,12 +157,12 @@
         .cta-box {
             background: linear-gradient(135deg, #FF0066, #FF6600);
             color: #FFFFFF;
-            padding: 50px 80px;
-            border-radius: 40px;
-            font-size: 62px;
+            padding: 45px 75px;
+            border-radius: 35px;
+            font-size: 58px;
             font-weight: 900;
-            margin-top: 60px;
-            box-shadow: 0 0 60px rgba(255, 102, 0, 0.8);
+            margin-top: 50px;
+            box-shadow: 0 0 60px rgba(255, 102, 0, 0.7);
             animation: cta-pulse 2s ease-in-out infinite;
         }
         
@@ -153,25 +172,10 @@
         }
         
         .sub-cta {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 40px;
-        }
-        
-        /* Top Badge */
-        .badge {
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #FF0066, #FF6600);
-            color: #FFF;
-            padding: 20px 60px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 40px;
-            box-shadow: 0 10px 40px rgba(255, 0, 102, 0.6);
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 35px;
         }
     </style>
 </head>
