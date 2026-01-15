@@ -2,149 +2,233 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post 01 - Apresentação Prismatic Labs</title>
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 01 - Apresentação | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a1a1a;
-            font-family: 'Inter', sans-serif;
+            padding: 20px;
         }
         .post {
             width: 1080px;
             height: 1080px;
-            background: #000000;
+            background: linear-gradient(135deg, #000000 0%, #0f0620 50%, #000000 100%);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .gradient-bg {
+        /* NOISE TEXTURE OVERLAY */
+        .post::before {
+            content: "";
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 30%, rgba(168,85,247,0.15), transparent 50%),
-                        radial-gradient(circle at 70% 70%, rgba(6,217,215,0.15), transparent 50%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 217, 215, 0.1) 0%, transparent 50%);
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 1;
         }
         .content {
             position: relative;
             z-index: 2;
-            height: 100%;
+            text-align: center;
+            padding: 80px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 80px;
-            text-align: center;
+            justify-content: center;
+            height: 100%;
         }
-        .badge {
+        .hook {
             display: inline-block;
-            background: rgba(168,85,247,0.2);
-            border: 1px solid rgba(168,85,247,0.5);
-            color: #A855F7;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 18px;
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+            letter-spacing: 0.5px;
+        }
+        .main-title {
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, #A855F7, #06D9D7, #FF006E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 60px rgba(168, 85, 247, 0.3);
+            filter: drop-shadow(0 0 30px rgba(6, 217, 215, 0.2));
+        }
+        .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.95);
             font-weight: 600;
+            margin-bottom: 50px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+        .highlight-badge {
+            background: rgba(168, 85, 247, 0.15);
+            border: 2px solid rgba(168, 85, 247, 0.6);
+            border-radius: 30px;
+            padding: 28px 40px;
             margin-bottom: 40px;
-            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-badge::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(100%); }
+        }
+        .badge-text {
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .highlight-accent {
+            color: #06D9D7;
+            font-weight: 900;
+        }
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #A855F7, transparent);
+            margin: 30px 0;
+        }
+        .cta-text {
+            font-size: 28px;
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        .arrow {
+            color: #FF006E;
+            font-weight: 900;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        .footer {
+            position: absolute;
+            bottom: 100px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
         }
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 90px;
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 20px;
             background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
-        .tagline {
-            font-size: 42px;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 40px;
-            line-height: 1.3;
-        }
-        .highlight {
-            color: #FF006E;
-        }
-        .description {
-            font-size: 28px;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 60px;
-            line-height: 1.6;
-            max-width: 800px;
-        }
-        .stats {
-            display: flex;
-            gap: 60px;
-            justify-content: center;
-            margin-bottom: 60px;
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 56px;
-            font-weight: 900;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        .stat-label {
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
-        }
-        .cta {
-            font-size: 24px;
-            color: rgba(255,255,255,0.9);
+        .bio-hint {
+            font-size: 18px;
+            color: #06D9D7;
             font-weight: 600;
         }
-        .neon-line {
-            width: 300px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #06D9D7, transparent);
-            margin: 40px auto;
+        /* DECORATIONS */
+        .decoration {
+            position: absolute;
+            border: 2px solid;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .deco-1 {
+            width: 500px;
+            height: 500px;
+            border-color: #A855F7;
+            border-radius: 50%;
+            top: -200px;
+            left: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+        .deco-2 {
+            width: 400px;
+            height: 400px;
+            border-color: #06D9D7;
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="gradient-bg"></div>
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
         <div class="content">
-            <div class="badge">✨ NOVA AGÊNCIA EM FLORIPA</div>
-            <h1 class="logo">PRISMATIC LABS</h1>
-            <h2 class="tagline">
-                Landing Pages que<br>
-                <span class="highlight">Convertem 40%+</span>
-            </h2>
-            <p class="description">
-                Design <strong>dark mode + neon</strong> para infoprodutores<br>
-                e e-commerce que querem resultados mensuráveis
+            <div class="hook">✨ NOVO NO MERCADO</div>
+            
+            <h1 class="main-title">
+                PRISMATIC<br>
+                LABS
+            </h1>
+            
+            <p class="subtitle">
+                Landing pages dark mode + neon<br>
+                que convertem 40%+ dos seus visitantes
             </p>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">90+</div>
-                    <div class="stat-label">PageSpeed</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">10-15</div>
-                    <div class="stat-label">Dias</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">40%+</div>
-                    <div class="stat-label">Conversão</div>
+            
+            <div class="divider"></div>
+            
+            <div class="highlight-badge">
+                <div class="badge-text">
+                    Design <span class="highlight-accent">PREMIUM</span> +<br>
+                    Conversão <span class="highlight-accent">GARANTIDA</span>
                 </div>
             </div>
-            <div class="neon-line"></div>
-            <p class="cta">📱 Solicite proposta: +55 48 98458-0234</p>
+            
+            <p class="cta-text">
+                Descubra como <span class="arrow">↓</span>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="bio-hint">Link na bio →</div>
         </div>
     </div>
 </body>
