@@ -8,14 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root { --scale: 1; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body {
             height: 100%;
             margin: 0;
             background: #000;
+            overflow: hidden;
         }
 
         body {
@@ -39,12 +40,11 @@
             height: 1920px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #0a1428 100%);
+            box-shadow: 0 30px 100px rgba(0,0,0,0.8);
 
             transform: scale(var(--scale));
             transform-origin: center center;
-
-            background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #0a1428 100%);
-            box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
 
         /* Efeito Neon Background */
@@ -222,7 +222,9 @@
         }
 
         window.addEventListener('resize', setStoryScale);
-        if (window.visualViewport) window.visualViewport.addEventListener('resize', setStoryScale);
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', setStoryScale);
+        }
         setStoryScale();
     </script>
 </body>
