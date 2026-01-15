@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
     <title>Post 03 - 5 Erros | Prismatic Labs</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
+            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,200 +19,106 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
+            background: linear-gradient(135deg, #0a0a1e 0%, #1a0a2e 100%);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 80px 60px;
+            padding: 70px 60px;
         }
-        .post::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .title {
-            font-size: 52px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 12px;
-        }
-        .title-part1 {
-            color: #FFFFFF;
-        }
-        .title-part2 {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientShift 4s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-        }
-        .subtitle {
-            font-size: 22px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 500;
+        .header {
+            text-align: center;
             margin-bottom: 50px;
         }
-        .errors-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 40px;
+        .title {
+            font-size: 70px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
         }
-        .error-item {
-            background: rgba(168, 85, 247, 0.05);
-            border-left: 3px solid #A855F7;
-            border-radius: 12px;
-            padding: 24px 28px;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            backdrop-filter: blur(10px);
-        }
-        .error-number {
-            font-size: 28px;
-            font-weight: 700;
-            color: #A855F7;
-            flex-shrink: 0;
+        .subtitle {
             font-family: 'Space Grotesk', sans-serif;
-        }
-        .error-content {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .error-title {
-            font-size: 22px;
+            font-size: 32px;
             font-weight: 700;
-            color: #FFFFFF;
-        }
-        .error-desc {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.65);
-            font-weight: 500;
-        }
-        .footer {
-            position: absolute;
-            bottom: 100px;
-            left: 60px;
-            right: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            z-index: 3;
-        }
-        .cta {
-            font-size: 20px;
-            color: #06D9D7;
-            font-weight: 600;
-        }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            background: linear-gradient(135deg, #ff0055, #ffaa00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
         }
-        .decoration {
-            position: absolute;
-            border: 1px solid;
-            opacity: 0.04;
+        .errors-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .deco-1 {
-            width: 500px;
-            height: 500px;
-            border-color: #A855F7;
-            border-radius: 50%;
-            top: -200px;
-            left: -200px;
+        .error-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 6px solid #ff0055;
+            padding: 25px 35px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
-        .deco-2 {
-            width: 450px;
-            height: 450px;
-            border-color: #06D9D7;
-            border-radius: 50%;
-            bottom: -180px;
-            right: -180px;
+        .error-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff0055, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            min-width: 60px;
+        }
+        .error-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 4px;
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="decoration deco-1"></div>
-        <div class="decoration deco-2"></div>
+        <div class="header">
+            <h1 class="title">5 ERROS</h1>
+            <p class="subtitle">Que estão custando caro</p>
+        </div>
         
-        <div class="content">
-            <h1 class="title">
-                <span class="title-part1">5 Erros Comuns em</span><br>
-                <span class="title-part2">Landing Pages</span>
-            </h1>
-            <p class="subtitle">Que comprometem suas conversões</p>
-            
-            <div class="errors-list">
-                <div class="error-item">
-                    <span class="error-number">01</span>
-                    <div class="error-content">
-                        <div class="error-title">Design sem diferenciação</div>
-                        <div class="error-desc">Visão estética genérica que não comunica exclusividade</div>
-                    </div>
-                </div>
-                
-                <div class="error-item">
-                    <span class="error-number">02</span>
-                    <div class="error-content">
-                        <div class="error-title">Call-to-action ambíguo</div>
-                        <div class="error-desc">Botões que não orientam claramente a ação desejada</div>
-                    </div>
-                </div>
-                
-                <div class="error-item">
-                    <span class="error-number">03</span>
-                    <div class="error-content">
-                        <div class="error-title">Ausência de prova social</div>
-                        <div class="error-desc">Falta de credibilidade através de casos e depoimentos</div>
-                    </div>
-                </div>
-                
-                <div class="error-item">
-                    <span class="error-number">04</span>
-                    <div class="error-content">
-                        <div class="error-title">Excesso de informação</div>
-                        <div class="error-desc">Conteúdo extenso que prejudica a objetividade</div>
-                    </div>
-                </div>
-                
-                <div class="error-item">
-                    <span class="error-number">05</span>
-                    <div class="error-content">
-                        <div class="error-title">Experiência mobile negligenciada</div>
-                        <div class="error-desc">70% dos acessos acontecem em dispositivos móveis</div>
-                    </div>
-                </div>
+        <div class="errors-list">
+            <div class="error-item">
+                <div class="error-number">1</div>
+                <div class="error-text">Não automatizar processos repetitivos</div>
             </div>
-            
-            <div class="footer">
-                <div class="cta">Evite esses erros no seu projeto</div>
-                <div class="logo">PRISMATIC LABS</div>
+            <div class="error-item">
+                <div class="error-number">2</div>
+                <div class="error-text">Ignorar dados e análises importantes</div>
             </div>
+            <div class="error-item">
+                <div class="error-number">3</div>
+                <div class="error-text">Usar ferramentas desatualizadas</div>
+            </div>
+            <div class="error-item">
+                <div class="error-number">4</div>
+                <div class="error-text">Falta de integração entre sistemas</div>
+            </div>
+            <div class="error-item">
+                <div class="error-number">5</div>
+                <div class="error-text">Não investir em tecnologia</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
         </div>
     </div>
 </body>
