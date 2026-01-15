@@ -21,164 +21,132 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
+            background: #000000;
             position: relative;
             overflow: hidden;
-            padding: 70px 60px;
-        }
-        .post::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            padding: 80px;
+            justify-content: center;
         }
-        .title {
-            font-size: 62px;
+        .main-title {
+            font-size: 64px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 1.1;
-            text-align: center;
             color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 80px;
+            line-height: 1.1;
         }
-        .gradient {
-            background: linear-gradient(45deg, #FF006E, #A855F7);
+        .gradient-text {
+            background: linear-gradient(135deg, #FF006E, #A855F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .sections {
+        .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            flex: 1;
+            gap: 60px;
+            margin-bottom: 60px;
         }
-        .section {
+        .column {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
-        .section-header {
+        .section-title {
             font-size: 32px;
-            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            padding: 15px 25px;
-            border-radius: 12px;
-            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        .problem-header {
-            background: rgba(255, 0, 110, 0.1);
-            border: 2px solid #FF006E;
+        .title-problema {
             color: #FF006E;
         }
-        .solution-header {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            color: #FFFFFF;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
-        }
-        .items {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .title-solucao {
+            color: #06D9D7;
         }
         .item {
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid;
+            padding: 20px 24px;
+            border-radius: 8px;
         }
-        .problem-item {
-            border-left: 3px solid #FF006E;
+        .item-problema {
+            border-color: #FF006E;
         }
-        .solution-item {
-            border-left: 3px solid #06D9D7;
-        }
-        .icon {
-            font-size: 28px;
-            flex-shrink: 0;
+        .item-solucao {
+            border-color: #06D9D7;
         }
         .item-text {
-            font-size: 19px;
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.85);
             font-weight: 600;
-            line-height: 1.4;
+            line-height: 1.5;
         }
-        .footer {
+        .footer-stats {
             text-align: center;
-            font-size: 22px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .stat {
+            font-size: 28px;
             color: #06D9D7;
-            font-weight: 700;
-            margin-top: 20px;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="content">
-            <h1 class="title">
-                O que <span class="gradient">freia</span> suas vendas?
-            </h1>
-            
-            <div class="sections">
-                <div class="section">
-                    <div class="section-header problem-header">O PROBLEMA</div>
-                    <div class="items">
-                        <div class="item problem-item">
-                            <span class="icon">⚠️</span>
-                            <div class="item-text">Landing genérica que não inspira confiança</div>
-                        </div>
-                        <div class="item problem-item">
-                            <span class="icon">⚠️</span>
-                            <div class="item-text">CTA confuso ou invisível para o visitante</div>
-                        </div>
-                        <div class="item problem-item">
-                            <span class="icon">⚠️</span>
-                            <div class="item-text">Design mobile quebrado (70% do tráfego)</div>
-                        </div>
-                        <div class="item problem-item">
-                            <span class="icon">⚠️</span>
-                            <div class="item-text">Carregamento lento = visitante desiste</div>
-                        </div>
-                    </div>
+        <h1 class="main-title">
+            Seu site não vende?<br>
+            <span class="gradient-text">Esses são os motivos</span>
+        </h1>
+        
+        <div class="content-grid">
+            <div class="column">
+                <h2 class="section-title title-problema">Problema</h2>
+                <div class="item item-problema">
+                    <div class="item-text">Design ultrapassado que afasta clientes modernos</div>
                 </div>
-                
-                <div class="section">
-                    <div class="section-header solution-header">NOSSA SOLUÇÃO</div>
-                    <div class="items">
-                        <div class="item solution-item">
-                            <span class="icon">✅</span>
-                            <div class="item-text">Dark mode premium que transmite exclusividade</div>
-                        </div>
-                        <div class="item solution-item">
-                            <span class="icon">✅</span>
-                            <div class="item-text">CTA neon estratégico que atrai o clique</div>
-                        </div>
-                        <div class="item solution-item">
-                            <span class="icon">✅</span>
-                            <div class="item-text">Design responsivo perfeito em todos devices</div>
-                        </div>
-                        <div class="item solution-item">
-                            <span class="icon">✅</span>
-                            <div class="item-text">Otimização de performance e SEO</div>
-                        </div>
-                    </div>
+                <div class="item item-problema">
+                    <div class="item-text">CTAs escondidos ou confusos no layout</div>
+                </div>
+                <div class="item item-problema">
+                    <div class="item-text">Tempo de carregamento alto: visitante sai antes de ver</div>
+                </div>
+                <div class="item item-problema">
+                    <div class="item-text">Versão mobile quebrada ou não otimizada</div>
                 </div>
             </div>
             
-            <div class="footer">
-                Resultado: conversão até 4x maior
+            <div class="column">
+                <h2 class="section-title title-solucao">Solução</h2>
+                <div class="item item-solucao">
+                    <div class="item-text">Dark mode premium que transmite autoridade</div>
+                </div>
+                <div class="item item-solucao">
+                    <div class="item-text">CTAs estratégicos com hierarquia visual clara</div>
+                </div>
+                <div class="item item-solucao">
+                    <div class="item-text">Código otimizado: carrega em menos de 1 segundo</div>
+                </div>
+                <div class="item item-solucao">
+                    <div class="item-text">Mobile first: perfeito em qualquer dispositivo</div>
+                </div>
             </div>
+        </div>
+        
+        <div class="footer-stats">
+            <div class="stat">83% dos visitantes mobile</div>
+            <div class="stat-label">Seu site precisa funcionar perfeitamente em smartphones</div>
         </div>
     </div>
 </body>

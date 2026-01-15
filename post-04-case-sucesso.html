@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 04 - Case Sucesso | Prismatic Labs</title>
+    <title>Post 04 - Case de Sucesso | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
@@ -21,111 +21,151 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #0a0a0a 100%);
+            background: #000000;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             padding: 80px;
-        }
-        .post::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            text-align: center;
-            gap: 35px;
-            max-width: 800px;
         }
         .badge {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            color: #FFFFFF;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+            background: rgba(6, 217, 215, 0.15);
+            border: 1px solid #06D9D7;
+            color: #06D9D7;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
         }
-        .metric {
-            font-size: 110px;
+        .main-number {
+            font-size: 140px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -4px;
-            background: linear-gradient(45deg, #06D9D7, #A855F7);
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientShift 3s ease infinite;
+            line-height: 1;
+            margin-bottom: 20px;
         }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
+        .main-metric {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
         }
-        .metric-label {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
+        .case-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 50px;
+            max-width: 750px;
+            width: 100%;
+        }
+        .client-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .client-name {
+            font-size: 28px;
+            color: #FFFFFF;
+            font-weight: 900;
+            margin-bottom: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .client-role {
+            font-size: 18px;
+            color: #A855F7;
             font-weight: 600;
-        }
-        .testimonial-box {
-            background: rgba(6, 217, 215, 0.06);
-            border: 2px solid rgba(6, 217, 215, 0.25);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
         }
         .quote {
-            font-size: 26px;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.85);
             font-weight: 600;
-            line-height: 1.5;
+            line-height: 1.6;
             font-style: italic;
-            margin-bottom: 25px;
-        }
-        .author {
-            font-size: 22px;
-            color: #FFFFFF;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        .role {
-            font-size: 18px;
-            color: #06D9D7;
-            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
         }
         .highlight {
-            color: #FF006E;
+            color: #06D9D7;
             font-weight: 900;
+            font-style: normal;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .metric-item {
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 32px;
+            color: #06D9D7;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 8px;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .cta {
+            font-size: 24px;
+            color: #A855F7;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="content">
-            <div class="badge">CASE DE SUCESSO</div>
-            
-            <div class="metric">+182%</div>
-            <div class="metric-label">em leads qualificados em 45 dias</div>
-            
-            <div class="testimonial-box">
-                <div class="quote">
-                    "A Prismatic Labs entregou uma landing que <span class="highlight">transformou nosso funil de vendas</span>. O design premium transmite exatamente a autoridade que precisávamos."
-                </div>
-                <div class="author">Carolina Mendes</div>
-                <div class="role">Fundadora • Consultoria Estratégica</div>
+        <div class="badge">Case de Sucesso</div>
+        
+        <div class="main-number">+180%</div>
+        <div class="main-metric">de aumento em leads qualificados</div>
+        
+        <div class="case-box">
+            <div class="client-info">
+                <div class="client-name">Marina Oliveira</div>
+                <div class="client-role">Consultoria Empresarial</div>
             </div>
+            
+            <div class="quote">
+                "Landing da Prismatic <span class="highlight">triplicou minha geração de leads</span> em 30 dias. O design dark mode premium passa confiança instantânea."
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-value">180%</div>
+                    <div class="metric-label">Mais leads</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">52%</div>
+                    <div class="metric-label">Conversão</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">30d</div>
+                    <div class="metric-label">Prazo</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="cta">Próximo caso pode ser o seu</div>
         </div>
     </div>
 </body>

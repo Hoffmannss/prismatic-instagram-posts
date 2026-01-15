@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 05 - Dark Mode | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+            justify-content: center;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .main-title {
+            font-size: 72px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+        .reason-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 16px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .reason-icon {
+            font-size: 42px;
+        }
+        .reason-title {
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .reason-desc {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .bottom-stat {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .stat-number {
+            font-size: 56px;
+            color: #06D9D7;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 12px;
+        }
+        .stat-text {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="header">
+            <h1 class="main-title">
+                Por que Dark Mode<br>
+                <span class="gradient-text">converte mais?</span>
+            </h1>
+            <p class="subtitle">Ciência + Design = Resultados</p>
+        </div>
+        
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon">🧠</div>
+                <div class="reason-title">Foco Cognitivo</div>
+                <div class="reason-desc">Menos distrações visuais fazem o cérebro processar informações 23% mais rápido</div>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">👁️</div>
+                <div class="reason-title">Conforto Visual</div>
+                <div class="reason-desc">Reduz fadiga ocular em 60%, mantendo visitante por mais tempo na página</div>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">💰</div>
+                <div class="reason-title">Percepção Premium</div>
+                <div class="reason-desc">Estudos mostram: dark mode associado com marcas de luxo e tecnologia</div>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🎯</div>
+                <div class="reason-title">Destaque de CTAs</div>
+                <div class="reason-desc">Botões neon em fundo escuro aumentam taxa de clique em 41%</div>
+            </div>
+        </div>
+        
+        <div class="bottom-stat">
+            <div class="stat-number">+43% de conversão</div>
+            <div class="stat-text">média em landing pages dark mode vs. light mode</div>
+        </div>
+    </div>
+</body>
+</html>
