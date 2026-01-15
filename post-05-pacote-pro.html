@@ -21,101 +21,106 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #2e0a1a 50%, #000000 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #0a0a0a 100%);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 60px 80px;
         }
         .post::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 30% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 40%);
-            opacity: 0.6;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
         .badge {
-            display: inline-block;
+            position: absolute;
+            top: 50px;
             background: linear-gradient(45deg, #FF006E, #A855F7);
             color: #FFFFFF;
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 30px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 900;
-            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
-            margin-bottom: 20px;
-            z-index: 2;
-            position: relative;
-            letter-spacing: 0.5px;
+            box-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+            z-index: 10;
+            letter-spacing: 1px;
         }
         .content {
             position: relative;
             z-index: 2;
+            padding: 140px 80px 120px 80px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             text-align: center;
-            flex: 1;
-            justify-content: center;
         }
         .package-name {
-            font-size: 88px;
+            font-size: 80px;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            text-align: center;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #FF006E, #A855F7, #06D9D7);
+            line-height: 0.95;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -2px;
-            line-height: 0.95;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
         .price-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .price {
-            font-size: 128px;
+            font-size: 110px;
             font-weight: 900;
             color: #FFFFFF;
             line-height: 1;
-            letter-spacing: -3px;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -2px;
+            text-shadow: 0 0 40px rgba(6, 217, 215, 0.2);
         }
         .price-currency {
-            font-size: 56px;
-            opacity: 0.7;
+            font-size: 48px;
+            opacity: 0.8;
         }
         .duration {
             font-size: 26px;
             color: #06D9D7;
             font-weight: 700;
             margin-top: 12px;
-            letter-spacing: -0.5px;
+            text-shadow: 0 0 20px rgba(6, 217, 215, 0.3);
         }
         .features {
+            width: 100%;
+            max-width: 650px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            width: 100%;
+            gap: 16px;
             margin-bottom: 30px;
         }
         .feature {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 18px;
+            gap: 10px;
+            font-size: 19px;
             color: #FFFFFF;
             font-weight: 600;
-            background: rgba(168, 85, 247, 0.05);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            padding: 12px 16px;
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
         }
         .check {
             color: #06D9D7;
@@ -124,23 +129,24 @@
             font-weight: 900;
         }
         .highlight-box {
-            background: rgba(168, 85, 247, 0.12);
-            border: 2px solid #A855F7;
-            border-radius: 24px;
+            background: rgba(6, 217, 215, 0.08);
+            border: 2px solid #06D9D7;
+            border-radius: 20px;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 0 30px rgba(6, 217, 215, 0.2);
             backdrop-filter: blur(10px);
-            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
         }
         .highlight-text {
-            font-size: 28px;
+            font-size: 30px;
             color: #FFFFFF;
             font-weight: 700;
             line-height: 1.4;
         }
         .highlight-accent {
-            color: #06D9D7;
+            color: #FF006E;
             font-weight: 900;
+            text-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
         }
         .footer {
             position: absolute;
@@ -150,7 +156,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            z-index: 3;
+            width: calc(100% - 160px);
         }
         .logo {
             font-family: 'Space Grotesk', sans-serif;
@@ -159,24 +166,26 @@
             background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
         }
         .cta {
             font-size: 24px;
             color: #FF006E;
             font-weight: 900;
-            letter-spacing: -0.5px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         .decoration {
             position: absolute;
             border: 2px solid;
-            opacity: 0.12;
-            z-index: 0;
+            opacity: 0.06;
         }
         .deco-1 {
-            width: 450px;
-            height: 450px;
-            border-color: #FF006E;
+            width: 400px;
+            height: 400px;
+            border-color: #A855F7;
             border-radius: 50%;
             top: -150px;
             left: -150px;
@@ -186,8 +195,8 @@
             height: 350px;
             border-color: #06D9D7;
             border-radius: 50%;
-            bottom: -100px;
-            right: -100px;
+            bottom: -120px;
+            right: -120px;
         }
     </style>
 </head>
@@ -196,16 +205,18 @@
         <div class="decoration deco-1"></div>
         <div class="decoration deco-2"></div>
         
-        <div class="badge">⭐ MAIS POPULAR</div>
+        <div class="badge">🌟 MAIS PROCURADO</div>
         
         <div class="content">
-            <div class="package-name">PACOTE<br>PRO</div>
-            
-            <div class="price-section">
-                <div class="price">
-                    <span class="price-currency">R$</span>3.500
+            <div>
+                <div class="package-name">PACOTE PRO</div>
+                
+                <div class="price-section">
+                    <div class="price">
+                        <span class="price-currency">R$</span>3.500
+                    </div>
+                    <div class="duration">⏱️ 12 dias (do zero ao lançamento)</div>
                 </div>
-                <div class="duration">Entrega em 12 dias úteis</div>
             </div>
             
             <div class="features">
@@ -223,7 +234,7 @@
                 </div>
                 <div class="feature">
                     <span class="check">✓</span>
-                    <span>Animações suaves</span>
+                    <span>Animações premium</span>
                 </div>
                 <div class="feature">
                     <span class="check">✓</span>
@@ -231,11 +242,11 @@
                 </div>
                 <div class="feature">
                     <span class="check">✓</span>
-                    <span>Pop-up estratégico</span>
+                    <span>Pop-up avançado</span>
                 </div>
                 <div class="feature">
                     <span class="check">✓</span>
-                    <span>SEO avançado</span>
+                    <span>SEO otimizado</span>
                 </div>
                 <div class="feature">
                     <span class="check">✓</span>
@@ -245,15 +256,15 @@
             
             <div class="highlight-box">
                 <div class="highlight-text">
-                    Landing page que <span class="highlight-accent">converte 40%+</span><br>
-                    pronta em menos de 2 semanas
+                    <span class="highlight-accent">+40% de conversão</span><br>
+                    em menos de 2 semanas
                 </div>
             </div>
         </div>
         
         <div class="footer">
             <div class="logo">PRISMATIC LABS</div>
-            <div class="cta">SOLICITE PROPOSTA →</div>
+            <div class="cta">🔥 SOLICITE AGORA</div>
         </div>
     </div>
 </body>
