@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 06 - 4 Etapas | Prismatic Labs</title>
+    <title>Post 06 - Processo | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -21,151 +21,120 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #1a2e0a 50%, #000000 100%);
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
             position: relative;
             overflow: hidden;
-            padding: 80px 60px;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            padding: 80px 40px;
         }
         .post::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 50% 100%, rgba(6, 217, 215, 0.1) 0%, transparent 40%);
-            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
         .content {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
-            flex: 1;
-        }
-        .hook {
-            display: inline-block;
-            background: linear-gradient(45deg, #06D9D7, #A855F7);
-            color: #FFFFFF;
-            padding: 12px 28px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(6, 217, 215, 0.4);
-            width: fit-content;
+            gap: 40px;
+            width: 100%;
+            max-width: 900px;
         }
         .title {
-            font-size: 72px;
+            font-size: 60px;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 0.95;
-            margin-bottom: 30px;
-            color: #FFFFFF;
+            line-height: 1.1;
             letter-spacing: -2px;
+            text-align: center;
         }
-        .title-highlight {
+        .title-part1 {
+            color: #FFFFFF;
+        }
+        .title-part2 {
             background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
         }
-        .subtitle {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-weight: 600;
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
         .steps {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            flex: 1;
-            margin-bottom: 30px;
         }
         .step {
-            background: rgba(6, 217, 215, 0.08);
-            border: 2px solid rgba(6, 217, 215, 0.4);
-            border-radius: 20px;
-            padding: 25px;
+            background: rgba(168, 85, 247, 0.08);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            gap: 12px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(6, 217, 215, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        .step::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #06D9D7, transparent);
         }
         .step-number {
-            font-size: 56px;
+            font-size: 48px;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            background: linear-gradient(45deg, #FF006E, #A855F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            line-height: 1;
         }
         .step-title {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 24px;
             color: #FFFFFF;
-            margin-bottom: 12px;
+            font-weight: 700;
         }
-        .step-description {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
+        .step-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
             line-height: 1.4;
         }
-        .timeline {
-            background: rgba(6, 217, 215, 0.1);
-            border: 2px solid #06D9D7;
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            margin-bottom: 30px;
-        }
-        .timeline-text {
-            font-size: 22px;
+        .duration {
+            position: absolute;
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
             color: #06D9D7;
             font-weight: 700;
+            text-shadow: 0 0 20px rgba(6, 217, 215, 0.3);
+            background: rgba(6, 217, 215, 0.1);
+            border: 2px solid rgba(6, 217, 215, 0.3);
+            border-radius: 30px;
+            padding: 16px 32px;
+            z-index: 3;
         }
         .footer {
             position: absolute;
             bottom: 100px;
-            left: 60px;
-            right: 60px;
+            left: 40px;
+            right: 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
+            justify-content: center;
+            z-index: 3;
         }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hint {
-            font-size: 18px;
-            color: #06D9D7;
-            font-weight: 600;
+        .cta {
+            font-size: 22px;
+            color: #FF006E;
+            font-weight: 900;
         }
         .decoration {
             position: absolute;
             border: 2px solid;
-            opacity: 0.12;
-            z-index: 0;
+            opacity: 0.06;
         }
         .deco-1 {
             width: 400px;
@@ -180,8 +149,8 @@
             height: 350px;
             border-color: #06D9D7;
             border-radius: 50%;
-            bottom: -150px;
-            right: -150px;
+            bottom: -120px;
+            right: -120px;
         }
     </style>
 </head>
@@ -191,49 +160,42 @@
         <div class="decoration deco-2"></div>
         
         <div class="content">
-            <div class="hook">🛠️ NOSSO PROCESSO</div>
-            
             <h1 class="title">
-                <span class="title-highlight">4 ETAPAS</span> de<br>
-                Lançamento
+                <span class="title-part1">Como Funciona</span><br>
+                <span class="title-part2">Nosso Processo</span>
             </h1>
-            
-            <p class="subtitle">Transparência total. Prévia e aprovação em cada etapa.</p>
             
             <div class="steps">
                 <div class="step">
-                    <div class="step-number">1⃣</div>
-                    <div class="step-title">Brief</div>
-                    <div class="step-description">Entender seu negócio e público</div>
+                    <div class="step-number">1▪</div>
+                    <div class="step-title">Briefing</div>
+                    <div class="step-desc">Entendo seu negócio, público e objetivo</div>
                 </div>
                 
                 <div class="step">
-                    <div class="step-number">2⃣</div>
-                    <div class="step-title">Design</div>
-                    <div class="step-description">Prototipagem + criação visual</div>
+                    <div class="step-number">2▪</div>
+                    <div class="step-title">Estratégia</div>
+                    <div class="step-desc">Defino copywriting e estrutura de vendas</div>
                 </div>
                 
                 <div class="step">
-                    <div class="step-number">3⃣</div>
-                    <div class="step-title">Dev</div>
-                    <div class="step-description">Código otimizado + testes</div>
+                    <div class="step-number">3▪</div>
+                    <div class="step-title">Design Premium</div>
+                    <div class="step-desc">Crio landing dark mode + neon</div>
                 </div>
                 
                 <div class="step">
-                    <div class="step-number">4⃣</div>
-                    <div class="step-title">Deploy</div>
-                    <div class="step-description">Público ao vivo + suporte 30d</div>
+                    <div class="step-number">4▪</div>
+                    <div class="step-title">Deploy + Suporte</div>
+                    <div class="step-desc">Online e pronta pra vender</div>
                 </div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-text">⏱️ 12 dias úteis | Inicio imediato</div>
-            </div>
+            <div class="duration">⏱️ 12 DIAS DO ZERO AO ATIVO</div>
         </div>
         
         <div class="footer">
-            <div class="logo">PRISMATIC LABS</div>
-            <div class="hint">Processo profissional</div>
+            <div class="cta">🔥 Vamos começar seu projeto?</div>
         </div>
     </div>
 </body>
