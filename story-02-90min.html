@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story 02 - 90 Minutos | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            padding: 20px;
+        }
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0000 0%, #2e0a0a 30%, #1a0014 70%, #0a0014 100%);
+            box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+        }
+        
+        /* Urgência - Vermelho Neon */
+        .neon-bg {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            filter: blur(180px);
+            opacity: 0.5;
+        }
+        .neon-1 {
+            background: #FF0066;
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: urgent-pulse 1.5s ease-in-out infinite;
+        }
+        .neon-2 {
+            background: #FF6600;
+            bottom: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: urgent-pulse 1.5s ease-in-out infinite 0.75s;
+        }
+        
+        @keyframes urgent-pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+            50% { transform: translateX(-50%) scale(1.15); opacity: 0.7; }
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 80px;
+            text-align: center;
+        }
+        
+        .clock {
+            font-size: 220px;
+            margin-bottom: 80px;
+            animation: tick 1s ease-in-out infinite;
+            filter: drop-shadow(0 0 60px rgba(255, 102, 0, 0.8));
+        }
+        
+        @keyframes tick {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 100px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 60px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 0 0 50px rgba(255, 102, 0, 0.9);
+        }
+        
+        .countdown {
+            font-size: 160px;
+            font-weight: 900;
+            color: #FF6600;
+            margin-bottom: 80px;
+            text-shadow: 0 0 60px rgba(255, 102, 0, 1),
+                         0 0 100px rgba(255, 0, 102, 0.6);
+            animation: countdown-glow 1s ease-in-out infinite;
+        }
+        
+        @keyframes countdown-glow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .text-block {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255, 102, 0, 0.4);
+            border-radius: 40px;
+            padding: 50px 60px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 40px rgba(255, 102, 0, 0.3);
+        }
+        
+        .text-line {
+            font-size: 54px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .text-line:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            color: #FF6600;
+            font-weight: 900;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #FF0066, #FF6600);
+            color: #FFFFFF;
+            padding: 50px 80px;
+            border-radius: 40px;
+            font-size: 62px;
+            font-weight: 900;
+            margin-top: 60px;
+            box-shadow: 0 0 60px rgba(255, 102, 0, 0.8);
+            animation: cta-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes cta-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        .sub-cta {
+            font-size: 48px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 40px;
+        }
+        
+        /* Top Badge */
+        .badge {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FF0066, #FF6600);
+            color: #FFF;
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 40px;
+            box-shadow: 0 10px 40px rgba(255, 0, 102, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        
+        <div class="badge">URGÊNCIA</div>
+        
+        <div class="content">
+            <div class="clock">⏰</div>
+            
+            <h1 class="headline">FALTAM</h1>
+            
+            <div class="countdown">90 MIN</div>
+            
+            <div class="text-block">
+                <div class="text-line">Últimas <span class="highlight">2 vagas</span></div>
+                <div class="text-line">Janeiro/2026</div>
+            </div>
+            
+            <div class="text-block">
+                <div class="text-line">Orçamento grátis</div>
+                <div class="text-line">landing page <span class="highlight">premium</span></div>
+            </div>
+            
+            <div class="cta-box">
+                bit.ly/prismatic
+            </div>
+            
+            <div class="sub-cta">👆 Link na bio também</div>
+        </div>
+    </div>
+</body>
+</html>
