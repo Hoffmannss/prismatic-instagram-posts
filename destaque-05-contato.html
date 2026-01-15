@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, user-scalable=no">
+    <title>Destaque - Contato | Prismatic Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0a2e 0%, #0a1428 100%);
+            flex-shrink: 0;
+        }
+        .neon-bg {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.4;
+            z-index: 1;
+        }
+        .neon-1 {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .badge {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000;
+            padding: 18px 55px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 38px;
+            z-index: 20;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 200px 90px 120px 90px;
+            text-align: center;
+        }
+        .emoji {
+            font-size: 180px;
+            margin-bottom: 40px;
+        }
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 75px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 90px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+        .cta-main {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000;
+            padding: 55px 90px;
+            border-radius: 45px;
+            font-size: 68px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            box-shadow: 0 0 60px rgba(168, 85, 247, 0.6);
+        }
+        .contact-options {
+            width: 100%;
+            max-width: 850px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 30px;
+            padding: 40px 50px;
+            margin-bottom: 30px;
+        }
+        .contact-emoji {
+            font-size: 70px;
+            margin-right: 30px;
+        }
+        .contact-text {
+            font-size: 50px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <div class="neon-bg neon-1"></div>
+        
+        <div class="badge">FALE CONOSCO</div>
+        
+        <div class="content">
+            <div class="emoji">💬</div>
+            
+            <h1 class="headline">COMO<br>CONTRATAR</h1>
+            
+            <div class="cta-main">Link na Bio</div>
+            
+            <div class="contact-options">
+                <div class="contact-item">
+                    <div class="contact-emoji">📱</div>
+                    <div class="contact-text">WhatsApp direto</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-emoji">📩</div>
+                    <div class="contact-text">DM Instagram</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-emoji">🌐</div>
+                    <div class="contact-text">Formulário online</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
