@@ -21,129 +21,138 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
+            background: #000000;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 80px;
+            justify-content: space-between;
+            padding: 0;
         }
-        .post::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        .content {
+        .header {
+            padding: 60px 80px;
             position: relative;
             z-index: 2;
-            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid #A855F7;
+            color: #A855F7;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .main-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 35px;
-        }
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.9;
+            text-align: center;
+            padding: 0 100px;
+            position: relative;
+            z-index: 2;
         }
         .main-title {
-            font-size: 82px;
+            font-size: 110px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -3px;
+            line-height: 1;
+            letter-spacing: -4px;
             color: #FFFFFF;
-            margin: 0;
+            margin-bottom: 30px;
         }
         .gradient-text {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            background: linear-gradient(135deg, #A855F7 0%, #06D9D7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientShift 4s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
+            display: block;
         }
         .subtitle {
-            font-size: 28px;
-            color: rgba(255, 255, 255, 0.85);
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.75);
             font-weight: 600;
-            line-height: 1.5;
+            line-height: 1.4;
             max-width: 750px;
+            margin-bottom: 60px;
         }
-        .stats {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-            max-width: 850px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
             width: 100%;
         }
-        .stat {
-            background: rgba(168, 85, 247, 0.06);
-            border: 1px solid rgba(168, 85, 247, 0.25);
-            border-radius: 16px;
-            padding: 30px 20px;
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(10px);
+            gap: 16px;
+            transition: all 0.3s ease;
         }
-        .stat-number {
-            font-size: 42px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 900;
-            color: #06D9D7;
-            text-shadow: 0 0 20px rgba(6, 217, 215, 0.3);
+        .feature-icon {
+            font-size: 32px;
+            flex-shrink: 0;
         }
-        .stat-label {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-            text-align: center;
-        }
-        .value-prop {
-            font-size: 24px;
+        .feature-text {
+            font-size: 18px;
             color: #FFFFFF;
-            font-weight: 700;
-            margin-top: 20px;
+            font-weight: 600;
+            text-align: left;
         }
-        .highlight {
-            color: #FF006E;
+        .footer {
+            padding: 60px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-pill {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000000;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
         }
         .decoration {
             position: absolute;
-            border: 2px solid;
-            opacity: 0.06;
             border-radius: 50%;
+            opacity: 0.03;
+            z-index: 1;
         }
         .deco-1 {
-            width: 500px;
-            height: 500px;
-            border-color: #A855F7;
-            top: -200px;
-            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #A855F7 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
         }
         .deco-2 {
-            width: 400px;
-            height: 400px;
-            border-color: #06D9D7;
-            bottom: -150px;
-            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #06D9D7 0%, transparent 70%);
+            bottom: -200px;
+            left: -150px;
         }
     </style>
 </head>
@@ -152,36 +161,44 @@
         <div class="decoration deco-1"></div>
         <div class="decoration deco-2"></div>
         
-        <div class="content">
-            <div class="logo-text">PRISMATIC LABS</div>
-            
+        <div class="header">
+            <div class="badge">Prismatic Labs</div>
+        </div>
+        
+        <div class="main-content">
             <h1 class="main-title">
                 Landing Pages<br>
                 <span class="gradient-text">que Convertem</span>
             </h1>
             
             <p class="subtitle">
-                Transformamos visitantes em clientes através de design dark mode premium e estratégia de conversão científica
+                Design premium em dark mode<br>
+                para empresas que querem resultados reais
             </p>
             
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">+40%</div>
-                    <div class="stat-label">Conversão média</div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <span class="feature-text">Alta Performance</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">12 dias</div>
-                    <div class="stat-label">Do zero ao ativo</div>
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <span class="feature-text">+40% Conversão</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Mobile ready</div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎨</span>
+                    <span class="feature-text">Design Premium</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📱</span>
+                    <span class="feature-text">Mobile First</span>
                 </div>
             </div>
-            
-            <p class="value-prop">
-                Design premium • Resultados <span class="highlight">mensuráveis</span>
-            </p>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="cta-pill">Vamos conversar</div>
         </div>
     </div>
 </body>
