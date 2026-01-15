@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 03 - 5 Erros Fatais | Prismatic Labs</title>
+    <title>Post 03 - 5 Erros | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -21,155 +21,130 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #1a0f2e 50%, #000000 100%);
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
             position: relative;
             overflow: hidden;
-            padding: 80px 60px;
             display: flex;
             flex-direction: column;
+            padding: 80px 40px;
         }
         .post::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
-            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
         .content {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
-            height: 100%;
-        }
-        .hook {
-            display: inline-block;
-            background: linear-gradient(45deg, #FF006E, #A855F7);
-            color: #FFFFFF;
-            padding: 12px 28px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
-            width: fit-content;
+            gap: 0;
         }
         .title {
-            font-size: 76px;
+            font-size: 58px;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 0.95;
-            margin-bottom: 30px;
-            color: #FFFFFF;
+            line-height: 1;
             letter-spacing: -2px;
+            margin-bottom: 10px;
         }
-        .title-accent {
+        .title-part1 {
+            color: #FFFFFF;
+        }
+        .title-part2 {
             background: linear-gradient(45deg, #FF006E, #A855F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
         .subtitle {
             font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 600;
+            margin-bottom: 40px;
         }
-        .errors {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-            flex: 1;
+        .errors-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
             margin-bottom: 30px;
         }
         .error-item {
-            background: rgba(255, 0, 110, 0.08);
-            border: 1.5px solid rgba(255, 0, 110, 0.3);
-            border-radius: 16px;
-            padding: 18px 20px;
+            background: rgba(168, 85, 247, 0.08);
+            border-left: 4px solid #FF006E;
+            border-radius: 10px;
+            padding: 20px 24px;
             display: flex;
-            align-items: center;
-            gap: 15px;
+            gap: 16px;
+            align-items: flex-start;
             backdrop-filter: blur(10px);
             transition: all 0.3s;
         }
-        .error-item:hover {
-            border-color: rgba(255, 0, 110, 0.6);
-            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.15);
-        }
         .error-number {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
             color: #FF006E;
-            min-width: 40px;
-            text-align: center;
+            flex-shrink: 0;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        .error-text {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-            line-height: 1.3;
+        .error-content {
+            display: flex;
+            flex-direction: column;
         }
-        .bonus {
-            background: rgba(6, 217, 215, 0.1);
-            border: 2px solid #06D9D7;
-            border-radius: 18px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(6, 217, 215, 0.15);
-        }
-        .bonus-text {
-            font-size: 20px;
-            color: #06D9D7;
+        .error-title {
+            font-size: 22px;
             font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+        .error-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
         }
         .footer {
             position: absolute;
             bottom: 100px;
-            left: 60px;
-            right: 60px;
+            left: 40px;
+            right: 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
+            justify-content: center;
+            z-index: 3;
         }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hint {
-            font-size: 18px;
+        .cta {
+            font-size: 24px;
             color: #06D9D7;
-            font-weight: 600;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(6, 217, 215, 0.3);
         }
         .decoration {
             position: absolute;
             border: 2px solid;
-            opacity: 0.12;
-            z-index: 0;
+            opacity: 0.06;
         }
         .deco-1 {
             width: 400px;
             height: 400px;
-            border-color: #FF006E;
+            border-color: #A855F7;
             border-radius: 50%;
-            top: -180px;
-            left: -180px;
+            top: -150px;
+            left: -150px;
         }
         .deco-2 {
             width: 350px;
             height: 350px;
             border-color: #06D9D7;
             border-radius: 50%;
-            bottom: -150px;
-            right: -150px;
+            bottom: -120px;
+            right: -120px;
         }
     </style>
 </head>
@@ -179,49 +154,57 @@
         <div class="decoration deco-2"></div>
         
         <div class="content">
-            <div class="hook">💡 CONTEÓDO EDUCATIVO</div>
-            
             <h1 class="title">
-                <span class="title-accent">5 ERROS FATAIS</span><br>
-                em Landing Pages
+                <span class="title-part1">5 Erros Que</span><br>
+                <span class="title-part2">Matam Vendas</span>
             </h1>
+            <p class="subtitle">em landing pages (90% das empresas fazem)</p>
             
-            <p class="subtitle">Que destroem a conversão (e como evitar)</p>
-            
-            <div class="errors">
+            <div class="errors-list">
                 <div class="error-item">
-                    <div class="error-number">1</div>
-                    <div class="error-text">Design desatualizado (sem mobile)</div>
+                    <span class="error-number">1▪</span>
+                    <div class="error-content">
+                        <div class="error-title">Design genérico</div>
+                        <div class="error-desc">Não diferencia do concorrente</div>
+                    </div>
                 </div>
+                
                 <div class="error-item">
-                    <div class="error-number">2</div>
-                    <div class="error-text">Sem "gancho" visual nos primeiros 3s</div>
+                    <span class="error-number">2▪</span>
+                    <div class="error-content">
+                        <div class="error-title">CTA fraco</div>
+                        <div class="error-desc">Botão confundível</div>
+                    </div>
                 </div>
+                
                 <div class="error-item">
-                    <div class="error-number">3</div>
-                    <div class="error-text">Muitos cliques para converter</div>
+                    <span class="error-number">3▪</span>
+                    <div class="error-content">
+                        <div class="error-title">Sem prova social</div>
+                        <div class="error-desc">Cliente no escuro</div>
+                    </div>
                 </div>
+                
                 <div class="error-item">
-                    <div class="error-number">4</div>
-                    <div class="error-text">CTA fraco ou pouco visível</div>
+                    <span class="error-number">4▪</span>
+                    <div class="error-content">
+                        <div class="error-title">Muito texto</div>
+                        <div class="error-desc">Ninguém lê tudo</div>
+                    </div>
                 </div>
+                
                 <div class="error-item">
-                    <div class="error-number">5</div>
-                    <div class="error-text">Falta de trust signals (social proof)</div>
+                    <span class="error-number">5▪</span>
+                    <div class="error-content">
+                        <div class="error-title">Mobile esquecido</div>
+                        <div class="error-desc">70% acessa mobile</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="bonus">
-                <div class="bonus-text">
-                    💫 Acesse nosso checklist de 15 itens<br>
-                    (link na bio)
-                </div>
+            <div class="footer">
+                <div class="cta">🔥 Evite esses erros - fale comigo</div>
             </div>
-        </div>
-        
-        <div class="footer">
-            <div class="logo">PRISMATIC LABS</div>
-            <div class="hint">Evite esses erros</div>
         </div>
     </div>
 </body>
