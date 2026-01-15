@@ -67,9 +67,11 @@
             padding: 200px 90px 120px 90px;
             text-align: center;
         }
-        .emoji {
-            font-size: 180px;
+        .icon-container {
+            width: 180px;
+            height: 180px;
             margin-bottom: 50px;
+            filter: drop-shadow(0 0 40px rgba(168, 85, 247, 0.7));
         }
         .headline {
             font-family: 'Space Grotesk', sans-serif;
@@ -126,7 +128,18 @@
         <div class="badge">PRISMATIC LABS</div>
         
         <div class="content">
-            <div class="emoji">💎</div>
+            <div class="icon-container">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#06D9D7;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M100 20 L170 60 L170 140 L100 180 L30 140 L30 60 Z" fill="url(#grad1)" stroke="url(#grad1)" stroke-width="4"/>
+                    <path d="M100 50 L140 75 L140 125 L100 150 L60 125 L60 75 Z" fill="none" stroke="white" stroke-width="3" opacity="0.5"/>
+                </svg>
+            </div>
             
             <h1 class="headline">QUEM SOMOS</h1>
             
