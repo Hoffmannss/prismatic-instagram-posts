@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 08 - Depoimento Ricardo | Prismatic Labs</title>
+    <title>Post 08 - Case Ricardo Costa | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #1a1a1a;
+            background: #0a0a0a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,113 +21,129 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: #000000;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 80px;
+        }
+        .post::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            justify-content: center;
+        }
+        .hook {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+            letter-spacing: 0.5px;
+        }
+        .case-name {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        .case-role {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        .testimonial-box {
+            background: rgba(168, 85, 247, 0.08);
+            border: 2px solid rgba(168, 85, 247, 0.4);
+            border-radius: 24px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
             position: relative;
             overflow: hidden;
         }
-        .badge {
-            position: absolute;
-            top: 60px;
-            left: 60px;
-            background: rgba(6, 217, 215, 0.2);
-            color: #06D9D7;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 16px;
+        .quote {
+            font-size: 28px;
             font-weight: 700;
-            border: 2px solid #06D9D7;
-        }
-        .content {
-            padding: 180px 80px 80px 80px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .quote-icon {
-            font-size: 120px;
-            color: #06D9D7;
-            line-height: 1;
-            margin-bottom: 30px;
-            opacity: 0.3;
-        }
-        .quote-text {
-            font-size: 42px;
-            line-height: 1.4;
             color: #FFFFFF;
-            font-weight: 600;
-            margin-bottom: 50px;
-            flex: 1;
-        }
-        .highlight {
-            background: linear-gradient(45deg, #06D9D7, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        .result-box {
-            background: rgba(6, 217, 215, 0.1);
-            border: 2px solid #06D9D7;
-            border-radius: 20px;
-            padding: 35px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .result-number {
-            font-size: 96px;
-            font-weight: 900;
-            background: linear-gradient(45deg, #06D9D7, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
-        .result-label {
+        .quote-start {
+            font-size: 56px;
+            color: #A855F7;
+            opacity: 0.3;
+            line-height: 0.5;
+            margin-bottom: 10px;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 20px;
+        }
+        .result-badge {
+            background: linear-gradient(45deg, rgba(255, 0, 110, 0.2), rgba(168, 85, 247, 0.2));
+            border: 2px solid rgba(168, 85, 247, 0.5);
+            border-radius: 18px;
+            padding: 18px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .result-text {
             font-size: 28px;
+            color: #FF006E;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+        .result-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .cta {
+            font-size: 22px;
             color: #FFFFFF;
             font-weight: 700;
-        }
-        .author-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-        .author-avatar {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #06D9D7, #A855F7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            flex-shrink: 0;
-        }
-        .author-info {
-            flex: 1;
-        }
-        .author-name {
-            font-size: 32px;
-            font-weight: 900;
-            color: #FFFFFF;
-            margin-bottom: 8px;
-        }
-        .author-role {
-            font-size: 22px;
-            color: #A855F7;
-            font-weight: 600;
-        }
-        .stars {
-            font-size: 28px;
-            margin-top: 8px;
+            margin-top: 20px;
         }
         .footer {
             position: absolute;
-            bottom: 60px;
+            bottom: 100px;
             left: 80px;
             right: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 10;
         }
         .logo {
             font-family: 'Space Grotesk', sans-serif;
@@ -137,36 +153,32 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .cta {
-            font-size: 20px;
-            color: #FFFFFF;
+        .hint {
+            font-size: 18px;
+            color: #FF006E;
             font-weight: 600;
         }
-        .cta-highlight {
-            color: #FF006E;
-            font-weight: 900;
-        }
-        /* Geometric decoration */
         .decoration {
             position: absolute;
-            border: 3px solid;
-            opacity: 0.12;
+            border: 2px solid;
+            opacity: 0.1;
+            z-index: 0;
         }
         .deco-1 {
-            width: 320px;
-            height: 320px;
-            border-color: #06D9D7;
-            transform: rotate(45deg);
-            top: -100px;
-            right: -100px;
+            width: 450px;
+            height: 450px;
+            border-color: #FF006E;
+            border-radius: 50%;
+            top: -180px;
+            left: -180px;
         }
         .deco-2 {
-            width: 250px;
-            height: 250px;
-            border-color: #A855F7;
+            width: 350px;
+            height: 350px;
+            border-color: #06D9D7;
             border-radius: 50%;
-            bottom: 350px;
-            left: -80px;
+            bottom: -130px;
+            right: -130px;
         }
     </style>
 </head>
@@ -175,32 +187,36 @@
         <div class="decoration deco-1"></div>
         <div class="decoration deco-2"></div>
         
-        <div class="badge">💼 E-COMMERCE</div>
-        
         <div class="content">
-            <div class="quote-icon">"</div>
-            <div class="quote-text">
-                Meu e-commerce estava estagnado. A Prismatic Labs fez um redesign completo e os <span class="highlight">resultados foram imediatos.</span>
-            </div>
+            <div class="hook">🐠 CRESCIMENTO REAL</div>
             
-            <div class="result-box">
-                <div class="result-number">+67%</div>
-                <div class="result-label">Aumento em Vendas</div>
-            </div>
+            <h1 class="case-name">Ricardo Costa</h1>
+            <p class="case-role">E-commerce B2B | Importação</p>
             
-            <div class="author-section">
-                <div class="author-avatar">🚀</div>
-                <div class="author-info">
-                    <div class="author-name">Ricardo Costa</div>
-                    <div class="author-role">Dono - NEON Streetwear</div>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="testimonial-box">
+                <div class="quote-start">"</div>
+                <div class="quote">
+                    Em 60 dias consegui 3 grandes clientes. A landing page converteu como nunca.
+                </div>
+                
+                <div class="result-grid">
+                    <div class="result-badge">
+                        <div class="result-text">+67%</div>
+                        <div class="result-label">Conversão</div>
+                    </div>
+                    <div class="result-badge">
+                        <div class="result-text">3x</div>
+                        <div class="result-label">ROI 60d</div>
+                    </div>
                 </div>
             </div>
+            
+            <p class="cta">Próximo success story pode ser vocé 🚀</p>
         </div>
         
         <div class="footer">
             <div class="logo">PRISMATIC LABS</div>
-            <div class="cta">Quer resultados? → <span class="cta-highlight">Fale conosco</span></div>
+            <div class="hint">Quer crescer assim?</div>
         </div>
     </div>
 </body>
