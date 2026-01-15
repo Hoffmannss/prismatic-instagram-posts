@@ -2,50 +2,33 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1080, user-scalable=no">
     <title>Story 03 - Última Chance | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
     <style>
-        :root { --scale: 1; }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            background: #000;
-            overflow: hidden;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .stage {
-            position: fixed;
-            inset: 0;
+            background: #000;
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            background: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-
         .story {
             width: 1080px;
             height: 1920px;
             position: relative;
             overflow: hidden;
             background: #000000;
+            flex-shrink: 0;
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
-
-            transform: scale(var(--scale));
-            transform-origin: center center;
         }
 
-        /* Máximo Impacto - Neon Intenso */
+        /* --- STYLES ORIGINAIS --- */
         .neon-bg {
             position: absolute;
             width: 900px;
@@ -75,12 +58,10 @@
             transform: translateX(-50%);
             animation: final-pulse 1s ease-in-out infinite 0.6s;
         }
-
         @keyframes final-pulse {
             0%, 100% { opacity: 0.5; }
             50% { opacity: 0.7; }
         }
-
         .badge {
             position: absolute;
             top: 80px;
@@ -96,12 +77,10 @@
             animation: badge-glow 1s ease-in-out infinite;
             z-index: 20;
         }
-
         @keyframes badge-glow {
             0%, 100% { box-shadow: 0 10px 50px rgba(255, 0, 102, 0.7); }
             50% { box-shadow: 0 10px 70px rgba(255, 0, 102, 0.9); }
         }
-
         .content {
             position: relative;
             z-index: 10;
@@ -113,20 +92,17 @@
             padding: 200px 80px 120px 80px;
             text-align: center;
         }
-
         .fire {
             font-size: 200px;
             margin-bottom: 50px;
             animation: fire-shake 0.5s ease-in-out infinite;
             filter: drop-shadow(0 0 70px rgba(255, 0, 102, 0.9));
         }
-
         @keyframes fire-shake {
             0%, 100% { transform: rotate(0deg) scale(1); }
             25% { transform: rotate(-2deg) scale(1.04); }
             75% { transform: rotate(2deg) scale(1.04); }
         }
-
         .headline {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 100px;
@@ -140,7 +116,6 @@
             letter-spacing: -3px;
             filter: drop-shadow(0 0 35px rgba(255, 0, 102, 0.5));
         }
-
         .countdown {
             font-size: 125px;
             font-weight: 900;
@@ -150,12 +125,10 @@
                          0 0 100px rgba(168, 85, 247, 0.7);
             animation: final-countdown 0.8s ease-in-out infinite;
         }
-
         @keyframes final-countdown {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.07); }
         }
-
         .text-block {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(30px);
@@ -168,7 +141,6 @@
             width: 100%;
             max-width: 900px;
         }
-
         .text-line {
             font-size: 54px;
             font-weight: 900;
@@ -177,17 +149,14 @@
             margin-bottom: 12px;
             text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
         }
-
         .text-line:last-child {
             margin-bottom: 0;
         }
-
         .highlight {
             background: linear-gradient(135deg, #FF0066, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .cta-box {
             background: linear-gradient(135deg, #FF0066, #A855F7);
             color: #FFFFFF;
@@ -200,18 +169,15 @@
                         0 0 100px rgba(168, 85, 247, 0.5);
             animation: mega-pulse 1.5s ease-in-out infinite;
         }
-
         @keyframes mega-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.04); }
         }
-
         .arrow {
             font-size: 90px;
             margin-top: 35px;
             animation: bounce-arrow 1s ease-in-out infinite;
         }
-
         @keyframes bounce-arrow {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(18px); }
@@ -219,49 +185,31 @@
     </style>
 </head>
 <body>
-    <div class="stage">
-        <div class="story">
-            <div class="neon-bg neon-1"></div>
-            <div class="neon-bg neon-2"></div>
-            <div class="neon-bg neon-3"></div>
-
-            <div class="badge">ÚLTIMOS 15 MIN</div>
-
-            <div class="content">
-                <div class="fire">🔥</div>
-
-                <h1 class="headline">ÚLTIMA<br>CHANCE</h1>
-
-                <div class="countdown">15:00</div>
-
-                <div class="text-block">
-                    <div class="text-line">Orçamento grátis</div>
-                    <div class="text-line"><span class="highlight">ENCERRA ÀS 23h59</span></div>
-                </div>
-
-                <div class="cta-box">
-                    bit.ly/prismatic
-                </div>
-
-                <div class="arrow">👇</div>
+    <div class="story">
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        <div class="neon-bg neon-3"></div>
+        
+        <div class="badge">ÚLTIMOS 15 MIN</div>
+        
+        <div class="content">
+            <div class="fire">🔥</div>
+            
+            <h1 class="headline">ÚLTIMA<br>CHANCE</h1>
+            
+            <div class="countdown">15:00</div>
+            
+            <div class="text-block">
+                <div class="text-line">Orçamento grátis</div>
+                <div class="text-line"><span class="highlight">ENCERRA ÀS 23h59</span></div>
             </div>
+            
+            <div class="cta-box">
+                bit.ly/prismatic
+            </div>
+            
+            <div class="arrow">👇</div>
         </div>
     </div>
-
-    <script>
-        function setStoryScale() {
-            const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-            const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-
-            const scale = Math.min(vw / 1080, vh / 1920);
-            document.documentElement.style.setProperty('--scale', scale.toFixed(4));
-        }
-
-        window.addEventListener('resize', setStoryScale);
-        if (window.visualViewport) {
-            window.visualViewport.addEventListener('resize', setStoryScale);
-        }
-        setStoryScale();
-    </script>
 </body>
 </html>
