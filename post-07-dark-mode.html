@@ -21,24 +21,22 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0f062a 50%, #000000 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
             position: relative;
             overflow: hidden;
-            padding: 80px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            padding: 80px;
         }
         .post::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
-            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
         .content {
             position: relative;
@@ -47,127 +45,103 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            flex: 1;
-            justify-content: center;
+            gap: 40px;
         }
-        .hook {
-            display: inline-block;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+        .question {
+            font-size: 52px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+        .question-part1 {
             color: #FFFFFF;
-            padding: 12px 28px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
-            letter-spacing: 0.5px;
         }
-        .title {
-            font-size: 80px;
-            font-weight: 900;
-            line-height: 0.95;
-            margin-bottom: 25px;
+        .question-part2 {
             background: linear-gradient(45deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -2px;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
         }
-        .subtitle {
-            font-size: 32px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            font-weight: 600;
-            line-height: 1.3;
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
         .reasons {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-            width: 100%;
-            max-width: 700px;
-            margin-bottom: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 750px;
         }
         .reason {
-            background: rgba(168, 85, 247, 0.08);
-            border: 1.5px solid rgba(168, 85, 247, 0.3);
-            border-radius: 18px;
-            padding: 22px 25px;
+            background: rgba(6, 217, 215, 0.08);
+            border: 2px solid rgba(6, 217, 215, 0.3);
+            border-radius: 16px;
+            padding: 28px;
             display: flex;
-            align-items: flex-start;
-            gap: 18px;
+            flex-direction: column;
+            gap: 12px;
             backdrop-filter: blur(10px);
-            text-align: left;
         }
         .reason-icon {
-            font-size: 32px;
-            min-width: 40px;
-            text-align: center;
+            font-size: 44px;
         }
-        .reason-text {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .cta {
-            background: rgba(6, 217, 215, 0.15);
-            border: 2px solid #06D9D7;
-            border-radius: 20px;
-            padding: 22px 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(6, 217, 215, 0.15);
-            margin-bottom: 30px;
-        }
-        .cta-text {
+        .reason-title {
             font-size: 22px;
-            color: #06D9D7;
+            color: #FFFFFF;
             font-weight: 700;
+        }
+        .reason-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+        .bottom-text {
+            font-size: 28px;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #FF006E;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
         }
         .footer {
             position: absolute;
             bottom: 100px;
-            left: 60px;
-            right: 60px;
+            left: 80px;
+            right: 80px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
+            justify-content: center;
+            z-index: 3;
         }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hint {
-            font-size: 18px;
-            color: #A855F7;
-            font-weight: 600;
+        .cta {
+            font-size: 24px;
+            color: #06D9D7;
+            font-weight: 900;
         }
         .decoration {
             position: absolute;
             border: 2px solid;
-            opacity: 0.12;
-            z-index: 0;
+            opacity: 0.06;
         }
         .deco-1 {
             width: 400px;
             height: 400px;
             border-color: #A855F7;
             border-radius: 50%;
-            top: -180px;
-            right: -180px;
+            top: -150px;
+            left: -150px;
         }
         .deco-2 {
             width: 350px;
             height: 350px;
             border-color: #06D9D7;
             border-radius: 50%;
-            bottom: -150px;
-            left: -150px;
+            bottom: -120px;
+            right: -120px;
         }
     </style>
 </head>
@@ -177,44 +151,44 @@
         <div class="decoration deco-2"></div>
         
         <div class="content">
-            <div class="hook">🌙 CIENTÍFIA + RETORNO</div>
-            
-            <h1 class="title">POR QUÉ<br>DARK MODE?</h1>
-            
-            <p class="subtitle">Conversão + bem-estar do usuário</p>
+            <h1 class="question">
+                <span class="question-part1">Por que Dark Mode</span><br>
+                <span class="question-part2">converte mais?</span>
+            </h1>
             
             <div class="reasons">
                 <div class="reason">
-                    <div class="reason-icon">👁️</div>
-                    <div class="reason-text">Menos cansaço visual = mais tempo na página</div>
+                    <span class="reason-icon">👁</span>
+                    <div class="reason-title">Menos Fatíga</div>
+                    <div class="reason-desc">Olhos cansam menos com preto</div>
                 </div>
                 
                 <div class="reason">
-                    <div class="reason-icon">💰</div>
-                    <div class="reason-text">+40% conversão (comprovado em testes A/B)</div>
+                    <span class="reason-icon">💰</span>
+                    <div class="reason-title">Premium</div>
+                    <div class="reason-desc">Associa com qualidade e luxo</div>
                 </div>
                 
                 <div class="reason">
-                    <div class="reason-icon">🢰</div>
-                    <div class="reason-text">Economia de bateria nos devices (usuário percebe)</div>
+                    <span class="reason-icon">⚡</span>
+                    <div class="reason-title">Destaque</div>
+                    <div class="reason-desc">CTA brilha e atrai cliques</div>
                 </div>
                 
                 <div class="reason">
-                    <div class="reason-icon">✨</div>
-                    <div class="reason-text">Premium + moderno = maior autoridade</div>
+                    <span class="reason-icon">🔗</span>
+                    <div class="reason-title">Memória</div>
+                    <div class="reason-desc">Marca fica gravada</div>
                 </div>
             </div>
             
-            <div class="cta">
-                <div class="cta-text">
-Seu site merece o mesmo impacto visual!
-                </div>
+            <div class="bottom-text">
+                Resultado: <span class="highlight">40%+ máis vendas</span>
             </div>
-        </div>
-        
-        <div class="footer">
-            <div class="logo">PRISMATIC LABS</div>
-            <div class="hint">Design inteligente</div>
+            
+            <div class="footer">
+                <div class="cta">🔥 Quer uma landing assim?</div>
+            </div>
         </div>
     </div>
 </body>
