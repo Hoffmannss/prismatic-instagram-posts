@@ -24,12 +24,11 @@
             background: #000000;
             position: relative;
             overflow: hidden;
-            display: grid;
-            grid-template-rows: auto 1fr 1fr;
+            display: flex;
+            flex-direction: column;
         }
         .header {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
-            padding: 60px;
+            padding: 60px 80px 40px;
             text-align: center;
             position: relative;
             z-index: 2;
@@ -39,84 +38,124 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
             color: #FFFFFF;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         .subtitle {
-            font-size: 22px;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
             font-weight: 600;
         }
         .comparison {
+            flex: 1;
             display: grid;
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
             position: relative;
+            z-index: 2;
         }
-        .before {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            padding: 50px;
+        .side {
+            padding: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            border-bottom: 3px solid #FF006E;
-        }
-        .after {
-            background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            text-align: center;
             position: relative;
         }
-        .after::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulance type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
+        .side-antes {
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.05), rgba(255, 0, 110, 0.02));
+            border-right: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .side-depois {
+            background: linear-gradient(135deg, rgba(6, 217, 215, 0.05), rgba(168, 85, 247, 0.02));
         }
         .label {
-            font-size: 28px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 900;
-            padding: 12px 30px;
-            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 28px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 40px;
         }
-        .label-before {
-            background: rgba(255, 255, 255, 0.1);
+        .label-antes {
+            background: rgba(255, 0, 110, 0.15);
             color: #FF006E;
-            border: 2px solid #FF006E;
+            border: 1px solid #FF006E;
         }
-        .label-after {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            color: #FFFFFF;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+        .label-depois {
+            background: rgba(6, 217, 215, 0.15);
+            color: #06D9D7;
+            border: 1px solid #06D9D7;
         }
-        .description {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 600;
+        .mockup {
+            width: 280px;
+            height: 400px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
             text-align: center;
-            max-width: 600px;
-            line-height: 1.4;
+        }
+        .mockup-antes {
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mockup-depois {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(6, 217, 215, 0.1) 100%);
+            border: 1px solid rgba(6, 217, 215, 0.3);
+            box-shadow: 0 20px 60px rgba(6, 217, 215, 0.2);
+        }
+        .mockup-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .mockup-depois .mockup-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+        .mockup-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        .mockup-depois .mockup-icon {
+            opacity: 1;
+        }
+        .metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
         .metric {
-            font-size: 64px;
-            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+        .metric-depois {
+            font-size: 18px;
+            color: #06D9D7;
             font-weight: 900;
-            margin: 10px 0;
         }
-        .metric-before {
-            color: #FF006E;
+        .footer {
+            padding: 50px 80px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 2;
         }
-        .metric-after {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+        .cta {
+            font-size: 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(6, 217, 215, 0.3);
         }
     </style>
 </head>
@@ -124,23 +163,49 @@
     <div class="post">
         <div class="header">
             <h1 class="title">A Diferença é Visível</h1>
-            <p class="subtitle">Impacto real do design profissional</p>
+            <p class="subtitle">Design que transforma visitantes em clientes</p>
         </div>
         
         <div class="comparison">
-            <div class="before">
-                <div class="label label-before">ANTES</div>
-                <div class="description">Landing genérica, confusa e sem identidade visual</div>
-                <div class="metric metric-before">2,8%</div>
-                <div class="description" style="font-size: 20px; opacity: 0.7;">Taxa de conversão</div>
+            <div class="side side-antes">
+                <div class="label label-antes">Antes</div>
+                <div class="mockup mockup-antes">
+                    <div class="mockup-icon">💻</div>
+                    <div class="mockup-text">
+                        Design genérico<br>
+                        Sem identidade<br>
+                        Textos confusos<br>
+                        Baixa conversão
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">Taxa de conversão: 2%</div>
+                    <div class="metric">Bounce rate: 68%</div>
+                    <div class="metric">Tempo médio: 12s</div>
+                </div>
             </div>
             
-            <div class="after">
-                <div class="label label-after">DEPOIS</div>
-                <div class="description">Dark mode premium com hierarquia clara e CTA estratégico</div>
-                <div class="metric metric-after">11,4%</div>
-                <div class="description" style="font-size: 20px;">Taxa de conversão (+307%)</div>
+            <div class="side side-depois">
+                <div class="label label-depois">Depois</div>
+                <div class="mockup mockup-depois">
+                    <div class="mockup-icon">✨</div>
+                    <div class="mockup-text">
+                        Dark Mode Premium<br>
+                        Identidade forte<br>
+                        CTAs claros<br>
+                        Alta conversão
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric-depois">Taxa de conversão: 43%</div>
+                    <div class="metric-depois">Bounce rate: 22%</div>
+                    <div class="metric-depois">Tempo médio: 2m18s</div>
+                </div>
             </div>
+        </div>
+        
+        <div class="footer">
+            <div class="cta">Sua landing pode ser a próxima</div>
         </div>
     </div>
 </body>
