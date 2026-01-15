@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 06 - Processo | Prismatic Labs</title>
+    <title>Post 05 - Benefícios Dark Mode | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
             position: relative;
             overflow: hidden;
             padding: 70px 60px;
@@ -40,7 +40,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 45px;
+            gap: 40px;
         }
         .title {
             font-size: 58px;
@@ -55,53 +55,46 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .steps {
+        .benefits {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
-        .step {
-            background: rgba(6, 217, 215, 0.06);
-            border: 2px solid rgba(6, 217, 215, 0.25);
+        .benefit {
+            background: rgba(168, 85, 247, 0.06);
+            border: 2px solid rgba(168, 85, 247, 0.25);
             border-radius: 16px;
             padding: 32px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
             backdrop-filter: blur(10px);
         }
-        .step-number {
-            font-size: 52px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 900;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .benefit-icon {
+            font-size: 48px;
         }
-        .step-title {
+        .benefit-title {
             font-size: 26px;
             color: #FFFFFF;
             font-weight: 900;
             font-family: 'Space Grotesk', sans-serif;
         }
-        .step-desc {
+        .benefit-desc {
             font-size: 19px;
             color: rgba(255, 255, 255, 0.75);
             font-weight: 600;
             line-height: 1.5;
         }
-        .timeline {
-            background: linear-gradient(45deg, #FF006E, #A855F7);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            margin-top: auto;
-        }
-        .timeline-text {
-            font-size: 28px;
-            color: #FFFFFF;
+        .stat {
+            color: #06D9D7;
             font-weight: 900;
-            font-family: 'Space Grotesk', sans-serif;
+        }
+        .footer {
+            text-align: center;
+            font-size: 24px;
+            color: #FF006E;
+            font-weight: 700;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -109,37 +102,37 @@
     <div class="post">
         <div class="content">
             <h1 class="title">
-                Nosso Processo de <span class="gradient">Trabalho</span>
+                Por que Dark Mode <span class="gradient">converte mais</span>?
             </h1>
             
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-title">Imersão</div>
-                    <div class="step-desc">Analisamos seu negócio, público-alvo e objetivos de conversão</div>
+            <div class="benefits">
+                <div class="benefit">
+                    <span class="benefit-icon">🧠</span>
+                    <div class="benefit-title">Menos Fadiga Visual</div>
+                    <div class="benefit-desc">Estudos mostram <span class="stat">60% menos cansaço</span> ocular, mantendo o visitante mais tempo na página</div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-title">Estratégia</div>
-                    <div class="step-desc">Definimos arquitetura de informação e copywriting persuasivo</div>
+                <div class="benefit">
+                    <span class="benefit-icon">💰</span>
+                    <div class="benefit-title">Percepção Premium</div>
+                    <div class="benefit-desc">Associado a <span class="stat">luxo e exclusividade</span>, aumentando o valor percebido do produto</div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-title">Design Premium</div>
-                    <div class="step-desc">Criamos interface dark mode + neon com foco em conversão</div>
+                <div class="benefit">
+                    <span class="benefit-icon">⚡</span>
+                    <div class="benefit-title">Destaque Estratégico</div>
+                    <div class="benefit-desc">CTAs neon se destacam <span class="stat">3x mais</span>, direcionando o olhar para a ação desejada</div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <div class="step-title">Deploy + Acompanhamento</div>
-                    <div class="step-desc">Landing no ar com suporte pós-lançamento e análise de métricas</div>
+                <div class="benefit">
+                    <span class="benefit-icon">🎯</span>
+                    <div class="benefit-title">Memorabilidade</div>
+                    <div class="benefit-desc">Design marcante aumenta <span class="stat">recall de marca em 47%</span> comparado a layouts tradicionais</div>
                 </div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-text">⏱️ Prazo médio: 10-14 dias do briefing ao ativo</div>
+            <div class="footer">
+                Ciência + Design = Resultados
             </div>
         </div>
     </div>
