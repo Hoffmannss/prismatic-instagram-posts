@@ -2,162 +2,226 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post 03 - 5 Erros Fatais</title>
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 03 - 5 Erros Fatais | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #1a1a1a;
-            font-family: 'Inter', sans-serif;
+            padding: 20px;
         }
         .post {
             width: 1080px;
             height: 1080px;
-            background: #000000;
+            background: linear-gradient(135deg, #000000 0%, #1a0f2e 50%, #000000 100%);
             position: relative;
-            padding: 80px;
+            overflow: hidden;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
         }
-        .gradient-corner {
+        .post::before {
+            content: "";
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle at top right, rgba(255,0,110,0.2), transparent);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 1;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
+        .content {
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .badge {
+        .hook {
             display: inline-block;
-            background: rgba(255,0,110,0.2);
-            color: #FF006E;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 30px;
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+            width: fit-content;
         }
         .title {
-            font-size: 64px;
+            font-size: 76px;
             font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 0.95;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+            letter-spacing: -2px;
         }
-        .highlight {
+        .title-accent {
             background: linear-gradient(45deg, #FF006E, #A855F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .subtitle {
-            font-size: 28px;
-            color: rgba(255,255,255,0.7);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-weight: 600;
         }
         .errors {
-            position: relative;
-            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            flex: 1;
+            margin-bottom: 30px;
         }
         .error-item {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid #FF006E;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            background: rgba(255, 0, 110, 0.08);
+            border: 1.5px solid rgba(255, 0, 110, 0.3);
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            backdrop-filter: blur(10px);
             transition: all 0.3s;
         }
         .error-item:hover {
-            background: rgba(255,0,110,0.1);
-            transform: translateX(10px);
+            border-color: rgba(255, 0, 110, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.15);
         }
         .error-number {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 900;
             color: #FF006E;
-            margin-bottom: 10px;
+            min-width: 40px;
+            text-align: center;
         }
-        .error-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
+        .error-text {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            line-height: 1.3;
         }
-        .error-description {
+        .bonus {
+            background: rgba(6, 217, 215, 0.1);
+            border: 2px solid #06D9D7;
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(6, 217, 215, 0.15);
+        }
+        .bonus-text {
             font-size: 20px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
+            color: #06D9D7;
+            font-weight: 700;
         }
         .footer {
             position: absolute;
-            bottom: 60px;
-            left: 80px;
-            right: 80px;
-            text-align: center;
-            padding: 30px;
-            background: rgba(168,85,247,0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(168,85,247,0.3);
+            bottom: 100px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
         }
-        .footer-text {
-            font-size: 22px;
-            color: #ffffff;
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hint {
+            font-size: 18px;
+            color: #06D9D7;
             font-weight: 600;
         }
-        .footer-text span {
-            color: #06D9D7;
+        .decoration {
+            position: absolute;
+            border: 2px solid;
+            opacity: 0.12;
+            z-index: 0;
+        }
+        .deco-1 {
+            width: 400px;
+            height: 400px;
+            border-color: #FF006E;
+            border-radius: 50%;
+            top: -180px;
+            left: -180px;
+        }
+        .deco-2 {
+            width: 350px;
+            height: 350px;
+            border-color: #06D9D7;
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="gradient-corner"></div>
-        <div class="header">
-            <div class="badge">⚠️ ATENÇÃO</div>
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
+        <div class="content">
+            <div class="hook">💡 CONTEÓDO EDUCATIVO</div>
+            
             <h1 class="title">
-                5 Erros <span class="highlight">Fatais</span><br>
+                <span class="title-accent">5 ERROS FATAIS</span><br>
                 em Landing Pages
             </h1>
-            <p class="subtitle">Que matam suas vendas (e você nem percebe)</p>
+            
+            <p class="subtitle">Que destroem a conversão (e como evitar)</p>
+            
+            <div class="errors">
+                <div class="error-item">
+                    <div class="error-number">1</div>
+                    <div class="error-text">Design desatualizado (sem mobile)</div>
+                </div>
+                <div class="error-item">
+                    <div class="error-number">2</div>
+                    <div class="error-text">Sem "gancho" visual nos primeiros 3s</div>
+                </div>
+                <div class="error-item">
+                    <div class="error-number">3</div>
+                    <div class="error-text">Muitos cliques para converter</div>
+                </div>
+                <div class="error-item">
+                    <div class="error-number">4</div>
+                    <div class="error-text">CTA fraco ou pouco visível</div>
+                </div>
+                <div class="error-item">
+                    <div class="error-number">5</div>
+                    <div class="error-text">Falta de trust signals (social proof)</div>
+                </div>
+            </div>
+            
+            <div class="bonus">
+                <div class="bonus-text">
+                    💫 Acesse nosso checklist de 15 itens<br>
+                    (link na bio)
+                </div>
+            </div>
         </div>
-        <div class="errors">
-            <div class="error-item">
-                <div class="error-number">01.</div>
-                <h3 class="error-title">Carregamento Lento</h3>
-                <p class="error-description">40% dos visitantes abandonam sites que demoram +3s</p>
-            </div>
-            <div class="error-item">
-                <div class="error-number">02.</div>
-                <h3 class="error-title">Não é Mobile-First</h3>
-                <p class="error-description">70% do tráfego vem do celular. Seu site funciona bem?</p>
-            </div>
-            <div class="error-item">
-                <div class="error-number">03.</div>
-                <h3 class="error-title">CTA Invisível</h3>
-                <p class="error-description">Se não grita "CLIQUE AQUI", você está perdendo dinheiro</p>
-            </div>
-            <div class="error-item">
-                <div class="error-number">04.</div>
-                <h3 class="error-title">Zero Social Proof</h3>
-                <p class="error-description">Sem depoimentos = Sem confiança = Sem vendas</p>
-            </div>
-            <div class="error-item">
-                <div class="error-number">05.</div>
-                <h3 class="error-title">Design Genérico</h3>
-                <p class="error-description">Parece todo mundo. Não se destaca. É esquecível.</p>
-            </div>
-        </div>
+        
         <div class="footer">
-            <p class="footer-text">Na Prismatic Labs, corrigimos todos esses erros | <span>+55 48 98458-0234</span></p>
+            <div class="logo">PRISMATIC LABS</div>
+            <div class="hint">Evite esses erros</div>
         </div>
     </div>
 </body>
