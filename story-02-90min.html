@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Story 02 - 90 Minutos | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,37 +14,43 @@
             box-sizing: border-box;
         }
 
-        html {
+        :root { --scale: 1; }
+
+        html, body {
             height: 100%;
-            width: 100%;
-            position: fixed;
-            overflow: hidden;
+            margin: 0;
+            background: #000;
         }
 
         body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background: #000;
             font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            overflow: hidden;
-            -webkit-overflow-scrolling: touch;
         }
-        .story {
+
+        /* Palco que ocupa a tela do celular */
+        .stage {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
+            background: #000;
+        }
+
+        /* O story mantém o tamanho real do design (Instagram Stories) */
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+
+            transform: scale(var(--scale));
+            transform-origin: center center;
+
             background: linear-gradient(135deg, #1a0000 0%, #2e0a0a 30%, #1a0014 70%, #0a0014 100%);
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
+
         /* Urgência - Vermelho Neon */
         .neon-bg {
             position: absolute;
@@ -198,35 +204,51 @@
     </style>
 </head>
 <body>
-    <div class="story">
-        <div class="neon-bg neon-1"></div>
-        <div class="neon-bg neon-2"></div>
+    <div class="stage">
+        <div class="story">
+            <div class="neon-bg neon-1"></div>
+            <div class="neon-bg neon-2"></div>
 
-        <div class="badge">URGÊNCIA</div>
+            <div class="badge">URGÊNCIA</div>
 
-        <div class="content">
-            <div class="clock">⏰</div>
+            <div class="content">
+                <div class="clock">⏰</div>
 
-            <h1 class="headline">FALTAM</h1>
+                <h1 class="headline">FALTAM</h1>
 
-            <div class="countdown">90 MIN</div>
+                <div class="countdown">90 MIN</div>
 
-            <div class="text-block">
-                <div class="text-line">Últimas <span class="highlight">2 vagas</span></div>
-                <div class="text-line">Janeiro/2026</div>
+                <div class="text-block">
+                    <div class="text-line">Últimas <span class="highlight">2 vagas</span></div>
+                    <div class="text-line">Janeiro/2026</div>
+                </div>
+
+                <div class="text-block">
+                    <div class="text-line">Orçamento grátis</div>
+                    <div class="text-line">landing page <span class="highlight">premium</span></div>
+                </div>
+
+                <div class="cta-box">
+                    bit.ly/prismatic
+                </div>
+
+                <div class="sub-cta">👆 Link na bio também</div>
             </div>
-
-            <div class="text-block">
-                <div class="text-line">Orçamento grátis</div>
-                <div class="text-line">landing page <span class="highlight">premium</span></div>
-            </div>
-
-            <div class="cta-box">
-                bit.ly/prismatic
-            </div>
-
-            <div class="sub-cta">👆 Link na bio também</div>
         </div>
     </div>
+
+    <script>
+        function setStoryScale() {
+            const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+            const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
+            const scale = Math.min(vw / 1080, vh / 1920);
+            document.documentElement.style.setProperty('--scale', scale.toFixed(4));
+        }
+
+        window.addEventListener('resize', setStoryScale);
+        if (window.visualViewport) window.visualViewport.addEventListener('resize', setStoryScale);
+        setStoryScale();
+    </script>
 </body>
 </html>
