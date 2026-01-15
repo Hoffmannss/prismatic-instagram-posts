@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
     <title>Post 02 - Antes/Depois | Prismatic Labs</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
+            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,7 +19,7 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: #000000;
+            background: #0a0014;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -30,182 +28,145 @@
         .header {
             padding: 60px 80px 40px;
             text-align: center;
-            position: relative;
-            z-index: 2;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff0080, #ffaa00);
+            color: #fff;
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
         .title {
-            font-size: 56px;
-            font-family: 'Space Grotesk', sans-serif;
+            font-size: 64px;
             font-weight: 900;
-            color: #FFFFFF;
+            color: #fff;
             margin-bottom: 20px;
-        }
-        .subtitle {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: -2px;
         }
         .comparison {
             flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
             gap: 0;
             position: relative;
-            z-index: 2;
         }
         .side {
-            padding: 60px;
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            padding: 60px 40px;
             position: relative;
         }
-        .side-antes {
-            background: linear-gradient(135deg, rgba(255, 0, 110, 0.05), rgba(255, 0, 110, 0.02));
-            border-right: 2px solid rgba(255, 255, 255, 0.1);
-        }
-        .side-depois {
-            background: linear-gradient(135deg, rgba(6, 217, 215, 0.05), rgba(168, 85, 247, 0.02));
-        }
-        .label {
-            font-size: 18px;
-            font-weight: 700;
-            padding: 10px 28px;
-            border-radius: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 40px;
-        }
-        .label-antes {
-            background: rgba(255, 0, 110, 0.15);
-            color: #FF006E;
-            border: 1px solid #FF006E;
-        }
-        .label-depois {
-            background: rgba(6, 217, 215, 0.15);
-            color: #06D9D7;
-            border: 1px solid #06D9D7;
-        }
-        .mockup {
-            width: 280px;
-            height: 400px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            text-align: center;
-        }
-        .mockup-antes {
-            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .mockup-depois {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(6, 217, 215, 0.1) 100%);
-            border: 1px solid rgba(6, 217, 215, 0.3);
-            box-shadow: 0 20px 60px rgba(6, 217, 215, 0.2);
-        }
-        .mockup-text {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        .mockup-depois .mockup-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-        }
-        .mockup-icon {
+        .side-label {
             font-size: 48px;
-            margin-bottom: 20px;
-            opacity: 0.5;
-        }
-        .mockup-depois .mockup-icon {
-            opacity: 1;
-        }
-        .metrics {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .metric {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-        }
-        .metric-depois {
-            font-size: 18px;
-            color: #06D9D7;
             font-weight: 900;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
-        .footer {
-            padding: 50px 80px;
+        .side-content {
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            position: relative;
-            z-index: 2;
-        }
-        .cta {
-            font-size: 28px;
             font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
             font-weight: 700;
-            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            line-height: 1.4;
+        }
+        .before {
+            background: #1a0014;
+        }
+        .before .side-label {
+            color: #999;
+        }
+        .before .side-content {
+            color: #666;
+        }
+        .after {
+            background: linear-gradient(135deg, #1a0028 0%, #0a0014 100%);
+        }
+        .after .side-label {
+            background: linear-gradient(135deg, #ff0080, #ffaa00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .after .side-content {
+            background: linear-gradient(135deg, #ff0080, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .divider {
+            width: 8px;
+            background: linear-gradient(135deg, #ff0080, #ffaa00);
+            position: relative;
+        }
+        .divider::before {
+            content: 'VS';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff0080, #ffaa00);
+            color: #fff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            box-shadow: 0 10px 40px rgba(255, 0, 128, 0.6);
+        }
+        .footer {
+            padding: 40px 80px;
+            text-align: center;
+            background: #000;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 4px;
         }
     </style>
 </head>
 <body>
     <div class="post">
         <div class="header">
-            <h1 class="title">A Diferença é Visível</h1>
-            <p class="subtitle">Design que transforma visitantes em clientes</p>
+            <div class="badge">Transformação</div>
+            <h1 class="title">VEJA A DIFERENÇA</h1>
         </div>
         
         <div class="comparison">
-            <div class="side side-antes">
-                <div class="label label-antes">Antes</div>
-                <div class="mockup mockup-antes">
-                    <div class="mockup-icon">💻</div>
-                    <div class="mockup-text">
-                        Design genérico<br>
-                        Sem identidade<br>
-                        Textos confusos<br>
-                        Baixa conversão
-                    </div>
-                </div>
-                <div class="metrics">
-                    <div class="metric">Taxa de conversão: 2%</div>
-                    <div class="metric">Bounce rate: 68%</div>
-                    <div class="metric">Tempo médio: 12s</div>
+            <div class="side before">
+                <div class="side-label">ANTES</div>
+                <div class="side-content">
+                    Processos<br>
+                    manuais<br>
+                    e lentos
                 </div>
             </div>
             
-            <div class="side side-depois">
-                <div class="label label-depois">Depois</div>
-                <div class="mockup mockup-depois">
-                    <div class="mockup-icon">✨</div>
-                    <div class="mockup-text">
-                        Dark Mode Premium<br>
-                        Identidade forte<br>
-                        CTAs claros<br>
-                        Alta conversão
-                    </div>
-                </div>
-                <div class="metrics">
-                    <div class="metric-depois">Taxa de conversão: 43%</div>
-                    <div class="metric-depois">Bounce rate: 22%</div>
-                    <div class="metric-depois">Tempo médio: 2m18s</div>
+            <div class="divider"></div>
+            
+            <div class="side after">
+                <div class="side-label">DEPOIS</div>
+                <div class="side-content">
+                    Automação<br>
+                    inteligente<br>
+                    e rápida
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <div class="cta">Sua landing pode ser a próxima</div>
+            <div class="logo">PRISMATIC LABS</div>
         </div>
     </div>
 </body>
