@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 10 - CTA Final | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+        }
+        .post::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 45px;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .title {
+            font-size: 72px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #FFFFFF;
+        }
+        .gradient {
+            background: linear-gradient(45deg, #06D9D7, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+        .subtitle {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            line-height: 1.5;
+            max-width: 750px;
+        }
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            text-align: left;
+        }
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+        .check {
+            color: #06D9D7;
+            font-size: 28px;
+        }
+        .cta-button {
+            background: linear-gradient(45deg, #FF006E, #A855F7);
+            color: #FFFFFF;
+            padding: 24px 60px;
+            border-radius: 16px;
+            font-size: 32px;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+            box-shadow: 0 0 40px rgba(255, 0, 110, 0.4);
+            margin-top: 20px;
+        }
+        .info {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="content">
+            <div class="logo">PRISMATIC LABS</div>
+            
+            <h1 class="title">
+                Pronto para
+                <br><span class="gradient">Transformar Visitantes em Clientes?</span>
+            </h1>
+            
+            <p class="subtitle">
+                Landing pages dark mode premium que convertem até 4x mais
+            </p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <span class="check">✓</span>
+                    <span>Design profissional que inspira confiança</span>
+                </div>
+                <div class="benefit">
+                    <span class="check">✓</span>
+                    <span>Estratégia de conversão inclusa</span>
+                </div>
+                <div class="benefit">
+                    <span class="check">✓</span>
+                    <span>Entrega em 12 dias</span>
+                </div>
+                <div class="benefit">
+                    <span class="check">✓</span>
+                    <span>Suporte pós-lançamento</span>
+                </div>
+            </div>
+            
+            <div class="cta-button">
+                Agende uma Consultoria
+            </div>
+            
+            <div class="info">
+                📲 Resposta em até 24h • Sem compromisso
+            </div>
+        </div>
+    </div>
+</body>
+</html>

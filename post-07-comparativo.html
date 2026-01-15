@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 07 - Comparativo | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 70px 50px;
+        }
+        .post::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        .title {
+            font-size: 52px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .gradient {
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .table {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        .table-header {
+            background: linear-gradient(45deg, #1a0a2e, #0a0a0a);
+        }
+        .table-cell {
+            padding: 24px 20px;
+            font-size: 19px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .table-header .table-cell {
+            font-size: 20px;
+            font-weight: 900;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .highlight-cell {
+            background: rgba(6, 217, 215, 0.08);
+            color: #06D9D7;
+            font-weight: 700;
+        }
+        .check {
+            color: #06D9D7;
+            font-size: 24px;
+        }
+        .cross {
+            color: #FF006E;
+            font-size: 24px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-top: auto;
+            padding: 20px;
+        }
+        .footer-highlight {
+            color: #FF006E;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="content">
+            <h1 class="title">
+                Prismatic Labs vs <span class="gradient">Mercado</span>
+            </h1>
+            
+            <div class="table">
+                <div class="table-row table-header">
+                    <div class="table-cell">Característica</div>
+                    <div class="table-cell" style="text-align: center;">Tradicional</div>
+                    <div class="table-cell highlight-cell" style="text-align: center;">Prismatic</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Design premium dark mode</div>
+                    <div class="table-cell" style="text-align: center;"><span class="cross">✕</span></div>
+                    <div class="table-cell highlight-cell" style="text-align: center;"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Estratégia de conversão inclusa</div>
+                    <div class="table-cell" style="text-align: center;"><span class="cross">✕</span></div>
+                    <div class="table-cell highlight-cell" style="text-align: center;"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Otimização mobile perfeita</div>
+                    <div class="table-cell" style="text-align: center;"><span class="cross">✕</span></div>
+                    <div class="table-cell highlight-cell" style="text-align: center;"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Performance e SEO</div>
+                    <div class="table-cell" style="text-align: center;"><span class="cross">✕</span></div>
+                    <div class="table-cell highlight-cell" style="text-align: center;"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Suporte pós-lançamento</div>
+                    <div class="table-cell" style="text-align: center;"><span class="cross">✕</span></div>
+                    <div class="table-cell highlight-cell" style="text-align: center;"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Prazo de entrega</div>
+                    <div class="table-cell" style="text-align: center;">30+ dias</div>
+                    <div class="table-cell highlight-cell" style="text-align: center;">12 dias</div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                Menos <span class="footer-highlight">tempo</span>, mais <span class="footer-highlight">resultado</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
