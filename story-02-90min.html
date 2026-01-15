@@ -2,31 +2,38 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Story 02 - 90 Minutos | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            background: #000;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000;
-            padding: 20px;
         }
+
         .story {
-            width: 1080px;
-            height: 1920px;
             position: relative;
+            height: 100vh;
+            width: calc(100vh * 9 / 16);
+            max-width: 1080px;
+            max-height: 1920px;
             overflow: hidden;
             background: linear-gradient(135deg, #1a0000 0%, #2e0a0a 30%, #1a0014 70%, #0a0014 100%);
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
-        
+
         /* Urgência - Vermelho Neon */
         .neon-bg {
             position: absolute;
@@ -51,12 +58,12 @@
             transform: translateX(-50%);
             animation: urgent-pulse 1.5s ease-in-out infinite 0.75s;
         }
-        
+
         @keyframes urgent-pulse {
             0%, 100% { opacity: 0.4; }
             50% { opacity: 0.6; }
         }
-        
+
         /* Top Badge */
         .badge {
             position: absolute;
@@ -72,7 +79,7 @@
             box-shadow: 0 10px 40px rgba(255, 0, 102, 0.6);
             z-index: 20;
         }
-        
+
         /* Content */
         .content {
             position: relative;
@@ -85,19 +92,19 @@
             padding: 200px 85px 120px 85px;
             text-align: center;
         }
-        
+
         .clock {
             font-size: 180px;
             margin-bottom: 60px;
             animation: tick 1s ease-in-out infinite;
             filter: drop-shadow(0 0 50px rgba(255, 102, 0, 0.7));
         }
-        
+
         @keyframes tick {
             0%, 100% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.08) rotate(4deg); }
         }
-        
+
         .headline {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 90px;
@@ -109,7 +116,7 @@
             letter-spacing: -2px;
             text-shadow: 0 0 45px rgba(255, 102, 0, 0.8);
         }
-        
+
         .countdown {
             font-size: 140px;
             font-weight: 900;
@@ -119,12 +126,12 @@
                          0 0 100px rgba(255, 0, 102, 0.6);
             animation: countdown-glow 1s ease-in-out infinite;
         }
-        
+
         @keyframes countdown-glow {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.04); }
         }
-        
+
         .text-block {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
@@ -136,7 +143,7 @@
             width: 100%;
             max-width: 900px;
         }
-        
+
         .text-line {
             font-size: 50px;
             font-weight: 700;
@@ -144,16 +151,16 @@
             line-height: 1.35;
             margin-bottom: 12px;
         }
-        
+
         .text-line:last-child {
             margin-bottom: 0;
         }
-        
+
         .highlight {
             color: #FF6600;
             font-weight: 900;
         }
-        
+
         .cta-box {
             background: linear-gradient(135deg, #FF0066, #FF6600);
             color: #FFFFFF;
@@ -165,12 +172,12 @@
             box-shadow: 0 0 60px rgba(255, 102, 0, 0.7);
             animation: cta-pulse 2s ease-in-out infinite;
         }
-        
+
         @keyframes cta-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.03); }
         }
-        
+
         .sub-cta {
             font-size: 44px;
             font-weight: 700;
@@ -183,30 +190,30 @@
     <div class="story">
         <div class="neon-bg neon-1"></div>
         <div class="neon-bg neon-2"></div>
-        
+
         <div class="badge">URGÊNCIA</div>
-        
+
         <div class="content">
             <div class="clock">⏰</div>
-            
+
             <h1 class="headline">FALTAM</h1>
-            
+
             <div class="countdown">90 MIN</div>
-            
+
             <div class="text-block">
                 <div class="text-line">Últimas <span class="highlight">2 vagas</span></div>
                 <div class="text-line">Janeiro/2026</div>
             </div>
-            
+
             <div class="text-block">
                 <div class="text-line">Orçamento grátis</div>
                 <div class="text-line">landing page <span class="highlight">premium</span></div>
             </div>
-            
+
             <div class="cta-box">
                 bit.ly/prismatic
             </div>
-            
+
             <div class="sub-cta">👆 Link na bio também</div>
         </div>
     </div>
