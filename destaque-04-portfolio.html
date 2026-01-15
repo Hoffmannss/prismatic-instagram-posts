@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, user-scalable=no">
     <title>Destaque - Portfólio | Prismatic Labs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -21,7 +21,7 @@
             height: 1920px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #0a0014 0%, #0a1428 50%, #0a2e14 100%);
+            background: linear-gradient(135deg, #0a1428 0%, #0d1942 50%, #0a1428 100%);
             flex-shrink: 0;
         }
         .neon-bg {
@@ -33,83 +33,82 @@
             opacity: 0.35;
             z-index: 1;
         }
-        .neon-1 {
-            background: #06D9D7;
-            top: -150px;
-            right: -150px;
-        }
-        .neon-2 {
-            background: #A855F7;
-            bottom: -150px;
-            left: -150px;
-        }
-        .badge {
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #06D9D7, #A855F7);
-            color: #FFF;
-            padding: 18px 55px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 38px;
-            z-index: 20;
-        }
+        .neon-1 { background: #6200ff; top: -200px; left: -100px; }
+        .neon-2 { background: #00d4ff; bottom: -200px; right: -100px; }
         .content {
             position: relative;
-            z-index: 10;
+            z-index: 2;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 200px 90px 120px 90px;
+            padding: 120px 80px;
             text-align: center;
         }
-        .emoji {
-            font-size: 160px;
-            margin-bottom: 40px;
+        .icon {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #6200ff, #00d4ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(98, 0, 255, 0.5);
         }
-        .headline {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 80px;
+        .icon svg {
+            width: 90px;
+            height: 90px;
+            fill: #fff;
+        }
+        .title {
+            font-family: 'Inter', sans-serif;
+            font-size: 120px;
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 80px;
-            color: #FFFFFF;
+            color: #fff;
             text-transform: uppercase;
-        }
-        .metrics {
-            width: 100%;
-            max-width: 900px;
-        }
-        .metric-box {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border: 3px solid rgba(6, 217, 215, 0.4);
-            border-radius: 35px;
-            padding: 50px 55px;
+            letter-spacing: -4px;
             margin-bottom: 40px;
-        }
-        .metric-value {
-            font-size: 95px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #06D9D7, #A855F7);
+            background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
+            line-height: 0.9;
         }
-        .metric-label {
-            font-size: 45px;
+        .subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 80px;
+            line-height: 1.4;
+        }
+        .cta {
+            background: linear-gradient(135deg, #6200ff, #00d4ff);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 40px;
             font-weight: 700;
-            color: #FFFFFF;
+            padding: 40px 100px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 20px 60px rgba(98, 0, 255, 0.4);
+            transition: all 0.3s ease;
         }
-        .tagline {
-            font-size: 52px;
-            font-weight: 900;
-            color: #06D9D7;
-            margin-top: 50px;
+        .logo {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 4px;
         }
     </style>
 </head>
@@ -117,32 +116,19 @@
     <div class="story">
         <div class="neon-bg neon-1"></div>
         <div class="neon-bg neon-2"></div>
-        
-        <div class="badge">PROJETOS</div>
-        
         <div class="content">
-            <div class="emoji">💼</div>
-            
-            <h1 class="headline">O QUE JÁ<br>FIZEMOS</h1>
-            
-            <div class="metrics">
-                <div class="metric-box">
-                    <div class="metric-value">40%+</div>
-                    <div class="metric-label">Taxa de Conversão</div>
-                </div>
-                
-                <div class="metric-box">
-                    <div class="metric-value">&lt;60s</div>
-                    <div class="metric-label">Tempo de Resposta</div>
-                </div>
-                
-                <div class="metric-box">
-                    <div class="metric-value">24/7</div>
-                    <div class="metric-label">Automação Ativa</div>
-                </div>
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.18l5.5 2.75v8.14L12 17.82l-5.5-2.75V6.93L12 4.18z"/>
+                    <path d="M12 8l-4 2v6l4 2 4-2v-6l-4-2z"/>
+                </svg>
             </div>
-            
-            <div class="tagline">Resultados reais</div>
+            <h1 class="title">PORTFÓLIO</h1>
+            <p class="subtitle">Explore nossos projetos<br>e transformações digitais</p>
+            <a href="#" class="cta">Ver Projetos</a>
+        </div>
+        <div class="logo">
+            <div class="logo-text">PRISMATIC LABS</div>
         </div>
     </div>
 </body>
