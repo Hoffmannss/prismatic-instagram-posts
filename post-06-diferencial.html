@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 06 - Diferencial | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #0a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        .post::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+        .content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 80px;
+            text-align: center;
+        }
+        .badge {
+            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .main-title {
+            font-size: 62px;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+        .title-gradient {
+            background: linear-gradient(90deg, #A855F7, #06D9D7, #FF006E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            max-width: 950px;
+        }
+        .comp-card {
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .comp-bad {
+            background: rgba(255, 0, 110, 0.08);
+            border: 2px solid rgba(255, 0, 110, 0.25);
+        }
+        .comp-good {
+            background: rgba(6, 217, 215, 0.08);
+            border: 2px solid rgba(6, 217, 215, 0.35);
+            box-shadow: 0 0 30px rgba(6, 217, 215, 0.2);
+        }
+        .comp-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .comp-bad .comp-title {
+            color: #FF006E;
+        }
+        .comp-good .comp-title {
+            color: #06D9D7;
+        }
+        .comp-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+        .comp-item {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            gap: 10px;
+        }
+        .comp-item-icon {
+            min-width: 25px;
+        }
+        .cta-box {
+            background: linear-gradient(45deg, rgba(6, 217, 215, 0.15), rgba(168, 85, 247, 0.15));
+            border: 2px solid #A855F7;
+            border-radius: 30px;
+            padding: 30px 50px;
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+        }
+        .cta-text {
+            font-size: 30px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="content">
+            <div class="badge">🔍 COMPARE AGORA</div>
+            
+            <h1 class="main-title">
+                <span class="title-gradient">Nem toda landing page é igual</span>
+            </h1>
+            
+            <div class="comparison">
+                <div class="comp-card comp-bad">
+                    <div class="comp-title">❌ Agencia Comum</div>
+                    <div class="comp-items">
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✗</span>
+                            <span>Design genérico</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✗</span>
+                            <span>Sem copywriting estratégico</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✗</span>
+                            <span>Caro: R$ 5k-15k</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✗</span>
+                            <span>Entrega: 30+ dias</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✗</span>
+                            <span>Conversão: ~2-3%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comp-card comp-good">
+                    <div class="comp-title">✅ PRISMATIC LABS</div>
+                    <div class="comp-items">
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✓</span>
+                            <span>Design premium + neon</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✓</span>
+                            <span>Copywriting provocativo</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✓</span>
+                            <span>Preço justo: R$ 2.5k-4k</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✓</span>
+                            <span>Entrega: 7 dias</span>
+                        </div>
+                        <div class="comp-item">
+                            <span class="comp-item-icon">✓</span>
+                            <span>Conversão: 40%+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <div class="cta-text">VAMOS COMPARAR SEU SITE?</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
