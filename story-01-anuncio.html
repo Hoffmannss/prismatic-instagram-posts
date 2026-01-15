@@ -2,31 +2,39 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Story 01 - Anúncio 17h | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            background: #000;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000;
-            padding: 20px;
         }
+
+        /* Canvas do story: 9:16, encaixado na tela */
         .story {
-            width: 1080px;
-            height: 1920px;
             position: relative;
+            height: 100vh;
+            width: calc(100vh * 9 / 16);
+            max-width: 1080px;
+            max-height: 1920px;
             overflow: hidden;
             background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #0a1428 100%);
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
-        
+
         /* Efeito Neon Background */
         .neon-bg {
             position: absolute;
@@ -49,7 +57,7 @@
             right: -150px;
             animation: pulse2 4s ease-in-out infinite;
         }
-        
+
         @keyframes pulse1 {
             0%, 100% { transform: scale(1); opacity: 0.35; }
             50% { transform: scale(1.1); opacity: 0.5; }
@@ -58,7 +66,7 @@
             0%, 100% { transform: scale(1); opacity: 0.35; }
             50% { transform: scale(1.2); opacity: 0.45; }
         }
-        
+
         /* Top Badge */
         .badge {
             position: absolute;
@@ -74,7 +82,7 @@
             box-shadow: 0 10px 40px rgba(168, 85, 247, 0.6);
             z-index: 20;
         }
-        
+
         /* Content */
         .content {
             position: relative;
@@ -87,18 +95,18 @@
             padding: 200px 90px 120px 90px;
             text-align: center;
         }
-        
+
         .emoji {
             font-size: 150px;
             margin-bottom: 50px;
             animation: bounce 2s ease-in-out infinite;
         }
-        
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
-        
+
         .headline {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 105px;
@@ -111,7 +119,7 @@
             text-transform: uppercase;
             letter-spacing: -2px;
         }
-        
+
         .subheadline {
             font-size: 70px;
             font-weight: 900;
@@ -119,7 +127,7 @@
             margin-bottom: 65px;
             text-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
         }
-        
+
         .text-block {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -130,7 +138,7 @@
             width: 100%;
             max-width: 900px;
         }
-        
+
         .text-line {
             font-size: 52px;
             font-weight: 700;
@@ -138,16 +146,16 @@
             line-height: 1.4;
             margin-bottom: 15px;
         }
-        
+
         .text-line:last-child {
             margin-bottom: 0;
         }
-        
+
         .highlight {
             color: #06D9D7;
             font-weight: 900;
         }
-        
+
         .cta {
             font-size: 58px;
             font-weight: 900;
@@ -155,7 +163,7 @@
             margin-top: 60px;
             animation: glow 2s ease-in-out infinite;
         }
-        
+
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 20px rgba(6, 217, 215, 0.5); }
             50% { text-shadow: 0 0 40px rgba(6, 217, 215, 1); }
@@ -166,26 +174,26 @@
     <div class="story">
         <div class="neon-bg neon-1"></div>
         <div class="neon-bg neon-2"></div>
-        
+
         <div class="badge">PRISMATIC LABS</div>
-        
+
         <div class="content">
             <div class="emoji">🚀</div>
-            
+
             <h1 class="headline">ALGO BOM<br>VEM AÍ</h1>
-            
+
             <h2 class="subheadline">Hoje às 17h</h2>
-            
+
             <div class="text-block">
                 <div class="text-line">Landing pages que</div>
                 <div class="text-line">convertem <span class="highlight">40%+</span></div>
             </div>
-            
+
             <div class="text-block">
                 <div class="text-line">Orçamento grátis</div>
                 <div class="text-line"><span class="highlight">HOJE APENAS</span></div>
             </div>
-            
+
             <div class="cta">Link na bio 👆</div>
         </div>
     </div>
