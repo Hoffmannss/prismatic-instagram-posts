@@ -2,38 +2,49 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Story 02 - 90 Minutos | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+        }
 
-        html, body {
+        html {
             height: 100%;
-            background: #000;
+            width: 100%;
+            position: fixed;
+            overflow: hidden;
         }
 
         body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000;
             font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            position: fixed;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
         }
-
         .story {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
             height: 100vh;
-            width: calc(100vh * 9 / 16);
-            max-width: 1080px;
-            max-height: 1920px;
             overflow: hidden;
             background: linear-gradient(135deg, #1a0000 0%, #2e0a0a 30%, #1a0014 70%, #0a0014 100%);
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
-
         /* Urgência - Vermelho Neon */
         .neon-bg {
             position: absolute;
