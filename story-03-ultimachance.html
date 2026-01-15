@@ -28,7 +28,7 @@
             box-shadow: 0 30px 100px rgba(0,0,0,0.8);
         }
 
-        /* --- STYLES ORIGINAIS --- */
+        /* --- NEON BACKGROUNDS --- */
         .neon-bg {
             position: absolute;
             width: 900px;
@@ -62,6 +62,8 @@
             0%, 100% { opacity: 0.5; }
             50% { opacity: 0.7; }
         }
+
+        /* --- BADGE --- */
         .badge {
             position: absolute;
             top: 80px;
@@ -81,6 +83,8 @@
             0%, 100% { box-shadow: 0 10px 50px rgba(255, 0, 102, 0.7); }
             50% { box-shadow: 0 10px 70px rgba(255, 0, 102, 0.9); }
         }
+
+        /* --- CONTENT --- */
         .content {
             position: relative;
             z-index: 10;
@@ -89,12 +93,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 200px 80px 120px 80px;
+            padding: 150px 80px 100px 80px; /* Ajuste leve no padding */
             text-align: center;
         }
+
         .fire {
             font-size: 200px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             animation: fire-shake 0.5s ease-in-out infinite;
             filter: drop-shadow(0 0 70px rgba(255, 0, 102, 0.9));
         }
@@ -103,12 +108,13 @@
             25% { transform: rotate(-2deg) scale(1.04); }
             75% { transform: rotate(2deg) scale(1.04); }
         }
+
         .headline {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 100px;
             font-weight: 900;
             line-height: 0.95;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             background: linear-gradient(135deg, #FF0066 0%, #A855F7 50%, #06D9D7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -116,11 +122,12 @@
             letter-spacing: -3px;
             filter: drop-shadow(0 0 35px rgba(255, 0, 102, 0.5));
         }
+
         .countdown {
             font-size: 125px;
             font-weight: 900;
             color: #FF0066;
-            margin-bottom: 65px;
+            margin-bottom: 60px;
             text-shadow: 0 0 70px rgba(255, 0, 102, 1),
                          0 0 100px rgba(168, 85, 247, 0.7);
             animation: final-countdown 0.8s ease-in-out infinite;
@@ -129,14 +136,15 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.07); }
         }
+
         .text-block {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(30px);
             border: 3px solid;
             border-image: linear-gradient(135deg, #FF0066, #A855F7, #06D9D7) 1;
             border-radius: 35px;
-            padding: 50px 55px;
-            margin-bottom: 50px;
+            padding: 45px 55px;
+            margin-bottom: 40px;
             box-shadow: 0 0 50px rgba(255, 0, 102, 0.3);
             width: 100%;
             max-width: 900px;
@@ -157,6 +165,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* --- CTA INVERTIDO --- */
+        .arrow {
+            font-size: 90px;
+            margin-bottom: 20px; /* Margem ajustada para baixo */
+            animation: bounce-arrow 1s ease-in-out infinite;
+        }
+        @keyframes bounce-arrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(18px); }
+        }
+
         .cta-box {
             background: linear-gradient(135deg, #FF0066, #A855F7);
             color: #FFFFFF;
@@ -164,7 +184,8 @@
             border-radius: 45px;
             font-size: 64px;
             font-weight: 900;
-            margin-top: 45px;
+            /* Margem ajustada */
+            margin-top: 10px; 
             box-shadow: 0 0 70px rgba(255, 0, 102, 0.8),
                         0 0 100px rgba(168, 85, 247, 0.5);
             animation: mega-pulse 1.5s ease-in-out infinite;
@@ -172,15 +193,6 @@
         @keyframes mega-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.04); }
-        }
-        .arrow {
-            font-size: 90px;
-            margin-top: 35px;
-            animation: bounce-arrow 1s ease-in-out infinite;
-        }
-        @keyframes bounce-arrow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(18px); }
         }
     </style>
 </head>
@@ -204,11 +216,13 @@
                 <div class="text-line"><span class="highlight">ENCERRA ÀS 23h59</span></div>
             </div>
             
+            <!-- ORDEM INVERTIDA AQUI: Seta primeiro, depois o Link -->
+            <div class="arrow">👇</div>
+
             <div class="cta-box">
                 bit.ly/prismatic
             </div>
             
-            <div class="arrow">👇</div>
         </div>
     </div>
 </body>
