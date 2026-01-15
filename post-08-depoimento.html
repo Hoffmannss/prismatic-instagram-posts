@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1080, initial-scale=1.0">
-    <title>Post 08 - Case Ricardo Costa | Prismatic Labs</title>
+    <title>Post 08 - Depoimento | Prismatic Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -21,24 +21,22 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #000000 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 50%, #0a0a0a 100%);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 60px 80px;
+            justify-content: center;
+            padding: 80px;
         }
         .post::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
-            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
         .content {
             position: relative;
@@ -47,93 +45,70 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            flex: 1;
-            justify-content: center;
+            gap: 30px;
         }
-        .hook {
-            display: inline-block;
-            background: linear-gradient(45deg, #FF006E, #A855F7);
-            color: #FFFFFF;
-            padding: 12px 28px;
-            border-radius: 25px;
-            font-size: 16px;
+        .result {
+            font-size: 100px;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
-            letter-spacing: 0.5px;
-        }
-        .case-name {
-            font-size: 56px;
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, #FF006E, #A855F7);
+            line-height: 0.9;
+            letter-spacing: -3px;
+            background: linear-gradient(45deg, #FF006E, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease infinite;
+            text-shadow: 0 0 40px rgba(255, 0, 110, 0.2);
         }
-        .case-role {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.7);
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+        .metric {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 600;
-            margin-bottom: 40px;
         }
-        .testimonial-box {
+        .case-box {
             background: rgba(168, 85, 247, 0.08);
-            border: 2px solid rgba(168, 85, 247, 0.4);
-            border-radius: 24px;
-            padding: 35px 40px;
-            margin-bottom: 30px;
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
-            position: relative;
-            overflow: hidden;
         }
-        .quote {
-            font-size: 28px;
-            font-weight: 700;
+        .client-name {
+            font-size: 32px;
             color: #FFFFFF;
+            font-weight: 900;
+            margin-bottom: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .client-role {
+            font-size: 20px;
+            color: #A855F7;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+        }
+        .testimonial {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            font-style: italic;
             line-height: 1.5;
             margin-bottom: 15px;
         }
-        .quote-start {
-            font-size: 56px;
-            color: #A855F7;
-            opacity: 0.3;
-            line-height: 0.5;
-            margin-bottom: 10px;
-        }
-        .result-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            margin-top: 20px;
-        }
-        .result-badge {
-            background: linear-gradient(45deg, rgba(255, 0, 110, 0.2), rgba(168, 85, 247, 0.2));
-            border: 2px solid rgba(168, 85, 247, 0.5);
-            border-radius: 18px;
-            padding: 18px 20px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
-        .result-text {
-            font-size: 28px;
+        .highlight {
             color: #FF006E;
             font-weight: 900;
-            letter-spacing: 0.5px;
+            text-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
         }
-        .result-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 600;
-            margin-top: 6px;
-        }
-        .cta {
-            font-size: 22px;
-            color: #FFFFFF;
+        .rating {
+            font-size: 20px;
+            color: #06D9D7;
             font-weight: 700;
-            margin-top: 20px;
+            letter-spacing: 2px;
         }
         .footer {
             position: absolute;
@@ -141,44 +116,39 @@
             left: 80px;
             right: 80px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
+            justify-content: center;
+            z-index: 3;
         }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .cta {
+            font-size: 24px;
+            color: #06D9D7;
+            font-weight: 900;
+            animation: pulse 2s infinite;
         }
-        .hint {
-            font-size: 18px;
-            color: #FF006E;
-            font-weight: 600;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         .decoration {
             position: absolute;
             border: 2px solid;
-            opacity: 0.1;
-            z-index: 0;
+            opacity: 0.06;
         }
         .deco-1 {
-            width: 450px;
-            height: 450px;
-            border-color: #FF006E;
+            width: 400px;
+            height: 400px;
+            border-color: #A855F7;
             border-radius: 50%;
-            top: -180px;
-            left: -180px;
+            top: -150px;
+            left: -150px;
         }
         .deco-2 {
             width: 350px;
             height: 350px;
             border-color: #06D9D7;
             border-radius: 50%;
-            bottom: -130px;
-            right: -130px;
+            bottom: -120px;
+            right: -120px;
         }
     </style>
 </head>
@@ -188,35 +158,21 @@
         <div class="decoration deco-2"></div>
         
         <div class="content">
-            <div class="hook">🐠 CRESCIMENTO REAL</div>
+            <div class="result">+67%</div>
+            <div class="metric">de aumento em vendas mensais</div>
             
-            <h1 class="case-name">Ricardo Costa</h1>
-            <p class="case-role">E-commerce B2B | Importação</p>
-            
-            <div class="testimonial-box">
-                <div class="quote-start">"</div>
-                <div class="quote">
-                    Em 60 dias consegui 3 grandes clientes. A landing page converteu como nunca.
+            <div class="case-box">
+                <div class="client-name">Ricardo Costa</div>
+                <div class="client-role">E-commerce | Moda</div>
+                <div class="testimonial">
+                    "Landing da Prismatic virou <span class="highlight">a maior geradora de vendas</span> do meu e-commerce. Visitante entra e quer comprar."
                 </div>
-                
-                <div class="result-grid">
-                    <div class="result-badge">
-                        <div class="result-text">+67%</div>
-                        <div class="result-label">Conversão</div>
-                    </div>
-                    <div class="result-badge">
-                        <div class="result-text">3x</div>
-                        <div class="result-label">ROI 60d</div>
-                    </div>
-                </div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
             
-            <p class="cta">Próximo success story pode ser vocé 🚀</p>
-        </div>
-        
-        <div class="footer">
-            <div class="logo">PRISMATIC LABS</div>
-            <div class="hint">Quer crescer assim?</div>
+            <div class="footer">
+                <div class="cta">🔥 Seu número pode ser +100%</div>
+            </div>
         </div>
     </div>
 </body>
