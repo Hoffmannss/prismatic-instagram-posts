@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, user-scalable=no">
+    <title>Destaque - Sobre Nós | Prismatic Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #0a1428 100%);
+            flex-shrink: 0;
+        }
+        .neon-bg {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.4;
+            z-index: 1;
+        }
+        .neon-1 {
+            background: #A855F7;
+            top: -200px;
+            left: -100px;
+        }
+        .neon-2 {
+            background: #06D9D7;
+            bottom: -200px;
+            right: -100px;
+        }
+        .badge {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000;
+            padding: 18px 55px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 38px;
+            z-index: 20;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 200px 90px 120px 90px;
+            text-align: center;
+        }
+        .emoji {
+            font-size: 180px;
+            margin-bottom: 50px;
+        }
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 95px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 80px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 35px;
+            padding: 45px 55px;
+            margin-bottom: 35px;
+            width: 100%;
+            max-width: 900px;
+        }
+        .info-line {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .info-line:last-child {
+            margin-bottom: 0;
+        }
+        .bullet {
+            color: #06D9D7;
+            margin-right: 20px;
+            font-size: 40px;
+        }
+        .tagline {
+            font-size: 52px;
+            font-weight: 900;
+            color: #06D9D7;
+            margin-top: 60px;
+            text-shadow: 0 0 30px rgba(6, 217, 215, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        
+        <div class="badge">PRISMATIC LABS</div>
+        
+        <div class="content">
+            <div class="emoji">💎</div>
+            
+            <h1 class="headline">QUEM SOMOS</h1>
+            
+            <div class="info-box">
+                <div class="info-line"><span class="bullet">●</span> Automação com IA</div>
+                <div class="info-line"><span class="bullet">●</span> Design + Desenvolvimento</div>
+                <div class="info-line"><span class="bullet">●</span> Resultados em 7 dias</div>
+            </div>
+            
+            <div class="tagline">Transformamos<br>ideias em vendas</div>
+        </div>
+    </div>
+</body>
+</html>
