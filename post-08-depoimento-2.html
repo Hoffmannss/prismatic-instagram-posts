@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 08 - Depoimento | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+            justify-content: center;
+            align-items: center;
+        }
+        .badge {
+            background: rgba(6, 217, 215, 0.15);
+            border: 1px solid #06D9D7;
+            color: #06D9D7;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+        .quote-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+        .quote-icon {
+            font-size: 80px;
+            color: rgba(168, 85, 247, 0.2);
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            line-height: 1;
+        }
+        .quote-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            line-height: 1.5;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        .highlight {
+            color: #06D9D7;
+            font-weight: 900;
+            font-style: normal;
+        }
+        .author-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .author-name {
+            font-size: 28px;
+            color: #FFFFFF;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .author-role {
+            font-size: 18px;
+            color: #A855F7;
+            font-weight: 600;
+        }
+        .rating {
+            font-size: 32px;
+            margin-top: 10px;
+        }
+        .result-badge {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000000;
+            padding: 20px 50px;
+            border-radius: 40px;
+            font-size: 28px;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="badge">Depoimento Real</div>
+        
+        <div class="quote-box">
+            <div class="quote-icon">"</div>
+            
+            <div class="quote-text">
+                A landing da Prismatic <span class="highlight">mudou completamente</span> como meus clientes me veem. Agora sou visto como referência premium no mercado.
+            </div>
+            
+            <div class="author-section">
+                <div class="author-name">Carlos Mendes</div>
+                <div class="author-role">Arquitetura de Interiores</div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+        
+        <div class="result-badge">+67% em vendas mensais</div>
+    </div>
+</body>
+</html>

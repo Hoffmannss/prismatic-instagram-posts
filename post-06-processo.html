@@ -21,126 +21,177 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            background: #000000;
             position: relative;
             overflow: hidden;
-            padding: 70px 60px;
-        }
-        .post::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 45px;
+            padding: 80px;
+            justify-content: center;
         }
-        .title {
-            font-size: 58px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 900;
-            line-height: 1.1;
+        .header {
             text-align: center;
-            color: #FFFFFF;
+            margin-bottom: 70px;
         }
-        .gradient {
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid #A855F7;
+            color: #A855F7;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
         }
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .step {
-            background: rgba(6, 217, 215, 0.06);
-            border: 2px solid rgba(6, 217, 215, 0.25);
-            border-radius: 16px;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            backdrop-filter: blur(10px);
-        }
-        .step-number {
-            font-size: 52px;
+        .main-title {
+            font-size: 64px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
+            color: #FFFFFF;
+            line-height: 1.1;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .step-title {
-            font-size: 26px;
-            color: #FFFFFF;
-            font-weight: 900;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .step-desc {
-            font-size: 19px;
-            color: rgba(255, 255, 255, 0.75);
-            font-weight: 600;
-            line-height: 1.5;
         }
         .timeline {
-            background: linear-gradient(45deg, #FF006E, #A855F7);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            padding-left: 60px;
         }
-        .timeline-text {
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background: linear-gradient(180deg, #A855F7, #06D9D7);
+        }
+        .step {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            padding: 30px 0;
+            position: relative;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            color: #000000;
+            flex-shrink: 0;
+            position: absolute;
+            left: -60px;
+            z-index: 2;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
             font-size: 28px;
             color: #FFFFFF;
             font-weight: 900;
+            margin-bottom: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .step-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .step-time {
+            font-size: 14px;
+            color: #06D9D7;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .footer-text {
+            font-size: 24px;
+            color: #A855F7;
+            font-weight: 700;
             font-family: 'Space Grotesk', sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="content">
-            <h1 class="title">
-                Nosso Processo de <span class="gradient">Trabalho</span>
+        <div class="header">
+            <div class="badge">Nosso Processo</div>
+            <h1 class="main-title">
+                Como criamos<br>
+                <span class="gradient-text">sua landing</span>
             </h1>
+        </div>
+        
+        <div class="timeline">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Briefing Estratégico</div>
+                    <div class="step-desc">Entendemos seu público, objetivos e diferenciais de mercado</div>
+                    <div class="step-time">1-2 dias</div>
+                </div>
+            </div>
             
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-title">Imersão</div>
-                    <div class="step-desc">Analisamos seu negócio, público-alvo e objetivos de conversão</div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-title">Estratégia</div>
-                    <div class="step-desc">Definimos arquitetura de informação e copywriting persuasivo</div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">03</div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
                     <div class="step-title">Design Premium</div>
-                    <div class="step-desc">Criamos interface dark mode + neon com foco em conversão</div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <div class="step-title">Deploy + Acompanhamento</div>
-                    <div class="step-desc">Landing no ar com suporte pós-lançamento e análise de métricas</div>
+                    <div class="step-desc">Criação do layout dark mode com identidade visual única</div>
+                    <div class="step-time">3-5 dias</div>
                 </div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-text">⏱️ Prazo médio: 10-14 dias do briefing ao ativo</div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Desenvolvimento</div>
+                    <div class="step-desc">Código otimizado, responsivo e com performance máxima</div>
+                    <div class="step-time">3-4 dias</div>
+                </div>
             </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">Testes & Ajustes</div>
+                    <div class="step-desc">Validação em múltiplos dispositivos e otimização final</div>
+                    <div class="step-time">2 dias</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-title">Entrega & Suporte</div>
+                    <div class="step-desc">Landing no ar com documentação completa e suporte técnico</div>
+                    <div class="step-time">1 dia</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">Prazo médio: 10-14 dias úteis</div>
         </div>
     </div>
 </body>

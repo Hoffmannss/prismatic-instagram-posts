@@ -21,142 +21,155 @@
         .post {
             width: 1080px;
             height: 1080px;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a0a2e 100%);
+            background: #000000;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 80px;
+            justify-content: space-between;
+            padding: 0;
         }
-        .post::before {
-            content: "";
+        .decoration {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='white' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
+            border-radius: 50%;
+            opacity: 0.04;
+            z-index: 1;
+        }
+        .deco-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #A855F7 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+        }
+        .deco-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #06D9D7 0%, transparent 70%);
+            bottom: -200px;
+            left: -150px;
         }
         .content {
-            position: relative;
-            z-index: 2;
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            gap: 45px;
+            padding: 100px 80px;
+            position: relative;
+            z-index: 2;
         }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: 3px;
-            background: linear-gradient(45deg, #A855F7, #06D9D7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .title {
-            font-size: 72px;
+        .main-title {
+            font-size: 96px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1;
+            margin-bottom: 40px;
+        }
+        .title-line1 {
             color: #FFFFFF;
         }
-        .gradient {
-            background: linear-gradient(45deg, #06D9D7, #A855F7);
+        .title-line2 {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientShift 3s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
         }
         .subtitle {
-            font-size: 28px;
-            color: rgba(255, 255, 255, 0.85);
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.75);
             font-weight: 600;
-            line-height: 1.5;
-            max-width: 750px;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-bottom: 80px;
         }
-        .benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            text-align: left;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+            margin-bottom: 70px;
         }
         .benefit {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 15px;
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
+            gap: 12px;
         }
-        .check {
-            color: #06D9D7;
-            font-size: 28px;
+        .benefit-icon {
+            font-size: 48px;
+        }
+        .benefit-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
         }
         .cta-button {
-            background: linear-gradient(45deg, #FF006E, #A855F7);
-            color: #FFFFFF;
-            padding: 24px 60px;
-            border-radius: 16px;
-            font-size: 32px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000000;
+            padding: 28px 70px;
+            border-radius: 50px;
+            font-size: 28px;
             font-weight: 900;
             font-family: 'Space Grotesk', sans-serif;
-            box-shadow: 0 0 40px rgba(255, 0, 110, 0.4);
-            margin-top: 20px;
+            display: inline-block;
         }
-        .info {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
+        .footer {
+            padding: 60px 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body>
     <div class="post">
+        <div class="decoration deco-1"></div>
+        <div class="decoration deco-2"></div>
+        
         <div class="content">
-            <div class="logo">PRISMATIC LABS</div>
-            
-            <h1 class="title">
-                Pronto para
-                <br><span class="gradient">Transformar Visitantes em Clientes?</span>
+            <h1 class="main-title">
+                <div class="title-line1">Pronto para</div>
+                <div class="title-line2">Converter Mais?</div>
             </h1>
             
             <p class="subtitle">
-                Landing pages dark mode premium que convertem até 4x mais
+                Landing page dark mode premium<br>
+                que transforma visitantes em clientes
             </p>
             
-            <div class="benefits">
+            <div class="benefits-grid">
                 <div class="benefit">
-                    <span class="check">✓</span>
-                    <span>Design profissional que inspira confiança</span>
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-text">Entrega em<br>10-14 dias</div>
                 </div>
                 <div class="benefit">
-                    <span class="check">✓</span>
-                    <span>Estratégia de conversão inclusa</span>
+                    <div class="benefit-icon">🎨</div>
+                    <div class="benefit-text">Design 100%<br>personalizado</div>
                 </div>
                 <div class="benefit">
-                    <span class="check">✓</span>
-                    <span>Entrega em 12 dias</span>
-                </div>
-                <div class="benefit">
-                    <span class="check">✓</span>
-                    <span>Suporte pós-lançamento</span>
+                    <div class="benefit-icon">📱</div>
+                    <div class="benefit-text">Mobile<br>perfeito</div>
                 </div>
             </div>
             
-            <div class="cta-button">
-                Agende uma Consultoria
-            </div>
-            
-            <div class="info">
-                📲 Resposta em até 24h • Sem compromisso
-            </div>
+            <div class="cta-button">Vamos conversar</div>
+        </div>
+        
+        <div class="footer">
+            <div class="logo">PRISMATIC LABS</div>
         </div>
     </div>
 </body>
