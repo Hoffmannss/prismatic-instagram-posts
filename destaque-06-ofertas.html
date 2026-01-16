@@ -116,16 +116,24 @@
             font-weight: 900;
             padding: 45px 120px;
             border-radius: 50px;
-            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
             box-shadow: 0 20px 60px rgba(255, 0, 128, 0.5);
-            transition: all 0.3s ease;
             animation: pulse-glow 2s ease-in-out infinite;
         }
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 20px 60px rgba(255, 0, 128, 0.5); }
             50% { box-shadow: 0 20px 80px rgba(255, 170, 0, 0.8); }
+        }
+        .arrow {
+            font-size: 70px;
+            margin-top: 30px;
+            color: #ffaa00;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         .logo {
             position: absolute;
@@ -156,7 +164,8 @@
             </div>
             <h1 class="title">OFERTAS</h1>
             <p class="subtitle">Desconto <span class="highlight">especial</span><br>por tempo limitado!</p>
-            <a href="#" class="cta">Quero!</a>
+            <div class="cta">LINK NA BIO</div>
+            <div class="arrow">↓</div>
         </div>
         <div class="logo">
             <div class="logo-text">PRISMATIC LABS</div>
