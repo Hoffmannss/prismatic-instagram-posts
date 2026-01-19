@@ -26,19 +26,19 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 80px;
+            padding: 60px;
         }
         .header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         .main-title {
-            font-size: 64px;
+            font-size: 52px;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 900;
             color: #FFFFFF;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.2;
+            margin-bottom: 15px;
         }
         .gradient-text {
             background: linear-gradient(135deg, #A855F7, #06D9D7);
@@ -46,71 +46,103 @@
             -webkit-text-fill-color: transparent;
         }
         .subtitle {
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.6);
             font-weight: 600;
         }
-        .table {
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             flex: 1;
+        }
+        .column {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .table-header {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 2px;
-            padding: 0 20px;
+        .column-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
-        .table-header-cell {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.5);
-            font-weight: 700;
+        .column-title {
+            font-size: 22px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin-bottom: 8px;
         }
-        .table-header-cell:first-child {
-            text-align: left;
+        .column-1 .column-title {
+            color: #EF4444;
+            text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
         }
-        .table-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 20px;
-            padding: 24px 20px;
-            background: rgba(255, 255, 255, 0.02);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            align-items: center;
+        .column-2 .column-title {
+            color: #F59E0B;
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
         }
-        .feature-name {
-            font-size: 18px;
-            color: #FFFFFF;
+        .column-3 .column-title {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: none;
+        }
+        .column-price {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
             font-weight: 600;
+            margin-top: 5px;
         }
-        .check {
-            text-align: center;
-            font-size: 28px;
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
         }
-        .check-yes {
-            color: #06D9D7;
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            line-height: 1.4;
         }
-        .check-no {
-            color: rgba(255, 255, 255, 0.2);
+        .icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
         }
-        .highlight-row {
-            background: rgba(168, 85, 247, 0.08);
+        .icon-no { color: rgba(255, 68, 68, 0.6); }
+        .icon-yes { color: #06D9D7; }
+        .feature-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        .column-3 {
+            background: rgba(168, 85, 247, 0.05);
             border: 1px solid rgba(168, 85, 247, 0.2);
-            border-radius: 8px;
-            margin: 2px 0;
+            position: relative;
+        }
+        .column-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #A855F7, #06D9D7);
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         .cta {
-            font-size: 24px;
+            font-size: 20px;
             color: #06D9D7;
             font-weight: 700;
             font-family: 'Space Grotesk', sans-serif;
@@ -123,61 +155,103 @@
             <h1 class="main-title">
                 Prismatic <span class="gradient-text">vs</span> Mercado
             </h1>
-            <p class="subtitle">Veja a diferença na prática</p>
+            <p class="subtitle">Comparação direta e sem filtro</p>
         </div>
         
-        <div class="table">
-            <div class="table-header">
-                <div class="table-header-cell">Recurso</div>
-                <div class="table-header-cell">Outros</div>
-                <div class="table-header-cell">Prismatic</div>
+        <div class="comparison">
+            <!-- Coluna 1: Agências -->
+            <div class="column column-1">
+                <div class="column-header">
+                    <div class="column-title">AGÊNCIAS<br>TRADICIONAIS</div>
+                    <div class="column-price">R$8k - R$25k</div>
+                </div>
+                <div class="features">
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Prazo: 45-90 dias (sempre atrasa)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Reuniões infinitas e burocracia</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Templates WordPress batidos</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">"Ficou lindo!" mas não converte</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Boa sorte sozinho após entrega</span>
+                    </div>
+                </div>
             </div>
             
-            <div class="table-row">
-                <div class="feature-name">Dark Mode Premium</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
+            <!-- Coluna 2: Freelancers -->
+            <div class="column column-2">
+                <div class="column-header">
+                    <div class="column-title">FREELANCERS<br>BARATOS</div>
+                    <div class="column-price">R$500 - R$2k</div>
+                </div>
+                <div class="features">
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">"Semana que vem" (3 meses depois)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">WhatsApp, sem briefing profissional</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Canva exportado como site</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Não responsivo, lento, amador</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-no">✕</span>
+                        <span class="feature-text">Sumiu, não responde mais</span>
+                    </div>
+                </div>
             </div>
             
-            <div class="table-row highlight-row">
-                <div class="feature-name">Design Personalizado</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
-            </div>
-            
-            <div class="table-row">
-                <div class="feature-name">Mobile First</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
-            </div>
-            
-            <div class="table-row highlight-row">
-                <div class="feature-name">Performance Otimizada</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
-            </div>
-            
-            <div class="table-row">
-                <div class="feature-name">Código Limpo</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
-            </div>
-            
-            <div class="table-row highlight-row">
-                <div class="feature-name">Suporte Técnico</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
-            </div>
-            
-            <div class="table-row">
-                <div class="feature-name">Foco em Conversão</div>
-                <div class="check check-no">✕</div>
-                <div class="check check-yes">✓</div>
+            <!-- Coluna 3: Prismatic -->
+            <div class="column column-3">
+                <div class="column-header">
+                    <div class="column-title">PRISMATIC<br>LABS</div>
+                    <div class="column-price">R$3k - R$7k</div>
+                </div>
+                <div class="features">
+                    <div class="feature-item">
+                        <span class="icon icon-yes">✓</span>
+                        <span class="feature-text">10-14 dias garantido</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-yes">✓</span>
+                        <span class="feature-text">Processo transparente no Notion</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-yes">✓</span>
+                        <span class="feature-text">Dark mode premium customizado</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-yes">✓</span>
+                        <span class="feature-text">+40% conversão média comprovada</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon icon-yes">✓</span>
+                        <span class="feature-text">30 dias suporte + treinamento</span>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="footer">
-            <div class="cta">Qualidade faz diferença</div>
+            <div class="cta">Cobramos pelo resultado, não pelo tempo</div>
         </div>
     </div>
 </body>
