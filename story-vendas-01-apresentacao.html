@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, user-scalable=no">
+    <title>Story 01 - Apresentação | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #0a0014 100%);
+        }
+        
+        /* Neon Background Effects */
+        .neon-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(180px);
+            opacity: 0.35;
+            z-index: 1;
+        }
+        
+        .neon-1 {
+            width: 800px;
+            height: 800px;
+            background: #A855F7;
+            top: -150px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .neon-2 {
+            width: 700px;
+            height: 700px;
+            background: #06D9D7;
+            bottom: -100px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        .neon-3 {
+            width: 600px;
+            height: 600px;
+            background: #A855F7;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            animation: pulse 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 90px;
+            text-align: center;
+        }
+        
+        /* Logo/Badge */
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 100px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+        }
+        
+        .diamond {
+            font-size: 64px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+        }
+        
+        /* Main Headline */
+        .headline {
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 80px;
+        }
+        
+        .headline-line1 {
+            font-size: 72px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .headline-line2 {
+            font-size: 96px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #A855F7 0%, #06D9D7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 0 0 60px rgba(168, 85, 247, 0.5);
+        }
+        
+        /* Description Box */
+        .description {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 30px;
+            padding: 50px 60px;
+            margin-bottom: 80px;
+            max-width: 900px;
+        }
+        
+        .description-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            margin-bottom: 50px;
+        }
+        
+        .value-prop {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        
+        .value-prop .highlight {
+            color: #06D9D7;
+            text-shadow: 0 0 30px rgba(6, 217, 215, 0.6);
+        }
+        
+        .arrow-down {
+            font-size: 52px;
+            margin-right: 10px;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 217, 215, 0.2));
+            border: 3px solid #A855F7;
+            border-radius: 25px;
+            padding: 40px 70px;
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.4);
+        }
+        
+        .cta-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        
+        .cta-highlight {
+            color: #A855F7;
+            font-weight: 900;
+            font-size: 46px;
+        }
+        
+        /* Decorative Elements */
+        .code-bracket {
+            position: absolute;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 120px;
+            font-weight: 900;
+            opacity: 0.08;
+            color: #A855F7;
+            z-index: 2;
+        }
+        
+        .bracket-left {
+            top: 250px;
+            left: 80px;
+            transform: rotate(-15deg);
+        }
+        
+        .bracket-right {
+            bottom: 300px;
+            right: 80px;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <!-- Neon Backgrounds -->
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        <div class="neon-bg neon-3"></div>
+        
+        <!-- Decorative Code Brackets -->
+        <div class="code-bracket bracket-left">&lt;</div>
+        <div class="code-bracket bracket-right">/&gt;</div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Logo -->
+            <div class="logo">
+                <span class="diamond">💎</span>PRISMATIC LABS
+            </div>
+            
+            <!-- Headline -->
+            <div class="headline">
+                <div class="headline-line1">Landing pages que</div>
+                <div class="headline-line2">CONVERTEM 40%+</div>
+            </div>
+            
+            <!-- Description -->
+            <div class="description">
+                <div class="description-text">
+                    Ninguém vai entender<br>
+                    seu produto se seu<br>
+                    site não convence
+                </div>
+                
+                <div class="value-prop">
+                    <span class="arrow-down">👇</span> Transformamos sua<br>
+                    oferta em páginas que<br>
+                    <span class="highlight">VENDEM</span>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-box">
+                <div class="cta-text">
+                    DM <span class="cta-highlight">"SITE"</span> para saber mais
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
