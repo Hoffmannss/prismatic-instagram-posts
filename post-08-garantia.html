@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, initial-scale=1.0">
+    <title>Post 08 - Garantia | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+        .badge {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-size: 56px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #06D9D7;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .guarantee-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .guarantee-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+        .check-icon {
+            color: #06D9D7;
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            color: #000;
+            font-weight: 900;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            flex: 1;
+        }
+        .highlight-box {
+            background: rgba(168, 85, 247, 0.1);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+        .highlight-text {
+            font-size: 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .cta {
+            font-size: 22px;
+            color: #06D9D7;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="badge">Única no mercado</div>
+        
+        <div class="header">
+            <div class="icon">🛡️</div>
+            <h1 class="main-title">
+                Garantia de <span class="gradient-text">ROI</span><br>em 60 dias
+            </h1>
+            <p class="subtitle">Ou devolvemos a diferença</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="section-title">Como funciona</div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Definimos meta de conversão juntos</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Instalamos tracking completo</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Entregamos site otimizado</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Acompanhamos por 60 dias</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Garantias inclusas</div>
+                <div class="guarantee-list">
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>Carregamento <2s</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>100% responsivo</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>Formulário testado</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>Integrações validadas</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>30 dias de suporte</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="check-icon">✓</span>
+                        <span>2 rodadas de ajustes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    Risco <span class="gradient-text">ZERO</span><br>
+                    Resultado <span class="gradient-text">GARANTIDO</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="cta">Confiamos no nosso processo</div>
+        </div>
+    </div>
+</body>
+</html>
