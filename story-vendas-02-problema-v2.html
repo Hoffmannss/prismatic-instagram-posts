@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, user-scalable=no">
+    <title>Story 02 V2 - Problema | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0000 0%, #2e0a0a 40%, #1a0014 70%, #0a0000 100%);
+        }
+        
+        /* Neon Background Effects */
+        .neon-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(160px);
+            z-index: 1;
+        }
+        
+        .neon-1 {
+            width: 900px;
+            height: 900px;
+            background: #FF0066;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.4;
+            animation: alert-pulse 2s ease-in-out infinite;
+        }
+        
+        .neon-2 {
+            width: 800px;
+            height: 800px;
+            background: #FF6600;
+            bottom: -150px;
+            right: -100px;
+            opacity: 0.35;
+            animation: alert-pulse 2.5s ease-in-out infinite reverse;
+        }
+        
+        @keyframes alert-pulse {
+            0%, 100% { opacity: 0.35; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 120px 85px 140px 85px;
+            text-align: center;
+        }
+        
+        /* Alert Icon */
+        .alert-icon {
+            font-size: 120px;
+            margin-bottom: 60px;
+            filter: drop-shadow(0 0 40px rgba(255, 0, 102, 0.8));
+            animation: shake 3s ease-in-out infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(-8deg); }
+            20%, 40% { transform: rotate(8deg); }
+            50%, 70%, 90% { transform: rotate(0deg); }
+        }
+        
+        /* Question */
+        .question {
+            font-family: 'Inter', sans-serif;
+            font-size: 58px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+        
+        /* Problem List */
+        .problem-list {
+            margin-bottom: 60px;
+        }
+        
+        .problem-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 50px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .problem-item .x-icon {
+            font-size: 54px;
+            margin-right: 18px;
+            color: #FF0066;
+            filter: drop-shadow(0 0 20px rgba(255, 0, 102, 0.6));
+        }
+        
+        /* Warning Box */
+        .warning-box {
+            background: rgba(255, 0, 102, 0.15);
+            backdrop-filter: blur(20px);
+            border: 3px solid #FF6600;
+            border-radius: 28px;
+            padding: 40px 55px;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 50px rgba(255, 102, 0, 0.4);
+        }
+        
+        .warning-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.5;
+        }
+        
+        .warning-highlight {
+            font-size: 44px;
+            font-weight: 900;
+            color: #FF6600;
+            text-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+        }
+        
+        /* Solution Box */
+        .solution-box {
+            background: linear-gradient(135deg, rgba(6, 217, 215, 0.15), rgba(168, 85, 247, 0.15));
+            border: 3px solid #06D9D7;
+            border-radius: 28px;
+            padding: 45px 65px;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 50px rgba(6, 217, 215, 0.3);
+        }
+        
+        .solution-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        
+        .solution-text .check {
+            font-size: 48px;
+            margin-right: 12px;
+            color: #06D9D7;
+            filter: drop-shadow(0 0 20px rgba(6, 217, 215, 0.8));
+        }
+        
+        .solution-highlight {
+            color: #06D9D7;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(6, 217, 215, 0.6);
+        }
+        
+        /* CTA */
+        .cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            padding: 40px 75px;
+            border-radius: 25px;
+            box-shadow: 0 0 60px rgba(168, 85, 247, 0.5);
+            margin-bottom: 70px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta .bulb {
+            font-size: 52px;
+            margin-right: 12px;
+        }
+        
+        /* ESPAÇO PARA STICKER - 280px */
+        .sticker-space {
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed rgba(255, 102, 0, 0.4);
+            border-radius: 25px;
+            background: rgba(255, 0, 102, 0.08);
+            margin-top: auto;
+        }
+        
+        .sticker-placeholder {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <!-- Neon Backgrounds -->
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Alert Icon -->
+            <div class="alert-icon">⚠️</div>
+            
+            <!-- Question -->
+            <div class="question">Seu site é:</div>
+            
+            <!-- Problem List -->
+            <div class="problem-list">
+                <div class="problem-item">
+                    <span class="x-icon">❌</span> Lento?
+                </div>
+                <div class="problem-item">
+                    <span class="x-icon">❌</span> Confuso?
+                </div>
+                <div class="problem-item">
+                    <span class="x-icon">❌</span> Não converte?
+                </div>
+            </div>
+            
+            <!-- Warning Box -->
+            <div class="warning-box">
+                <div class="warning-text">
+                    Você perde <span class="warning-highlight">80%</span> dos<br>
+                    visitantes em <span class="warning-highlight">5 segundos</span>
+                </div>
+            </div>
+            
+            <!-- Solution Box -->
+            <div class="solution-box">
+                <div class="solution-text">
+                    <span class="check">✅</span> Nós criamos páginas<br>
+                    que <span class="solution-highlight">PRENDEM</span> atenção
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta">
+                <span class="bulb">💡</span> Link na bio
+            </div>
+            
+            <!-- ESPAÇO RESERVADO PARA STICKER -->
+            <div class="sticker-space">
+                <div class="sticker-placeholder">
+                    📊 ÁREA PARA STICKER<br>
+                    <span style="font-size: 26px; opacity: 0.6;">Adicionar SLIDER aqui:<br>"Frustração com site?" 😡</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
