@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, user-scalable=no">
+    <title>Story 03 V2 - CTA Direto | Prismatic Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .story {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0a2e 0%, #2e0a1e 50%, #1a0a2e 100%);
+        }
+        
+        /* Neon Background Effects */
+        .neon-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(150px);
+            z-index: 1;
+        }
+        
+        .neon-1 {
+            width: 950px;
+            height: 950px;
+            background: #A855F7;
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.45;
+            animation: mega-pulse 2s ease-in-out infinite;
+        }
+        
+        .neon-2 {
+            width: 850px;
+            height: 850px;
+            background: #06D9D7;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.4;
+            animation: mega-pulse 2.5s ease-in-out infinite reverse;
+        }
+        
+        .neon-3 {
+            width: 700px;
+            height: 700px;
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.25;
+            animation: rotate-glow 15s linear infinite;
+        }
+        
+        @keyframes mega-pulse {
+            0%, 100% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.55; transform: translateX(-50%) scale(1.08); }
+        }
+        
+        @keyframes rotate-glow {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 110px 85px 140px 85px;
+            text-align: center;
+        }
+        
+        /* Rocket Icon */
+        .rocket-icon {
+            font-size: 140px;
+            margin-bottom: 55px;
+            filter: drop-shadow(0 0 50px rgba(168, 85, 247, 0.8));
+            animation: rocket-float 3s ease-in-out infinite;
+        }
+        
+        @keyframes rocket-float {
+            0%, 100% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-25px) rotate(5deg); }
+        }
+        
+        /* Main Headline */
+        .headline {
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 70px;
+        }
+        
+        .headline-line1 {
+            font-size: 72px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        
+        .headline-line2 {
+            font-size: 86px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #A855F7 0%, #06D9D7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            letter-spacing: -2px;
+            animation: text-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes text-glow {
+            0%, 100% { filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.5)); }
+            50% { filter: drop-shadow(0 0 50px rgba(6, 217, 215, 0.6)); }
+        }
+        
+        /* Feature Boxes */
+        .features {
+            margin-bottom: 65px;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-box {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(168, 85, 247, 0.4);
+            border-radius: 25px;
+            padding: 35px 50px;
+            margin-bottom: 22px;
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.2);
+        }
+        
+        .feature-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        
+        .feature-highlight {
+            color: #06D9D7;
+            font-weight: 900;
+            text-shadow: 0 0 25px rgba(6, 217, 215, 0.6);
+        }
+        
+        /* Main CTA Button */
+        .main-cta {
+            background: linear-gradient(135deg, #A855F7, #06D9D7);
+            padding: 48px 85px;
+            border-radius: 28px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 70px rgba(168, 85, 247, 0.6),
+                        0 0 100px rgba(6, 217, 215, 0.4);
+            animation: cta-mega-pulse 2s ease-in-out infinite;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @keyframes cta-mega-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 70px rgba(168, 85, 247, 0.6),
+                            0 0 100px rgba(6, 217, 215, 0.4);
+            }
+            50% { 
+                transform: scale(1.03);
+                box-shadow: 0 0 90px rgba(168, 85, 247, 0.8),
+                            0 0 130px rgba(6, 217, 215, 0.6);
+            }
+        }
+        
+        .cta-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 58px;
+            font-weight: 900;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .arrow-right {
+            font-size: 62px;
+            margin-right: 12px;
+        }
+        
+        /* Alternative CTA */
+        .alt-cta {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 55px;
+        }
+        
+        .chat-icon {
+            font-size: 48px;
+            margin: 0 10px;
+        }
+        
+        .cta-keyword {
+            color: #A855F7;
+            font-weight: 900;
+            font-size: 48px;
+        }
+        
+        /* Limited Badge */
+        .limited-badge {
+            background: linear-gradient(135deg, #FF0066, #FF6600);
+            color: #FFFFFF;
+            padding: 20px 55px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 34px;
+            font-weight: 900;
+            box-shadow: 0 0 50px rgba(255, 0, 102, 0.5);
+            margin-bottom: 60px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ESPAÇO PARA STICKER - 280px */
+        .sticker-space {
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed rgba(168, 85, 247, 0.4);
+            border-radius: 25px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(6, 217, 215, 0.08));
+            margin-top: auto;
+        }
+        
+        .sticker-placeholder {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            font-size: 70px;
+            opacity: 0.5;
+            z-index: 5;
+            animation: sparkle-twinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle-twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.6; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        .sparkle-1 {
+            top: 180px;
+            left: 90px;
+            animation-delay: 0s;
+        }
+        
+        .sparkle-2 {
+            top: 320px;
+            right: 110px;
+            animation-delay: 1s;
+        }
+        
+        .sparkle-3 {
+            bottom: 550px;
+            left: 120px;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="story">
+        <!-- Neon Backgrounds -->
+        <div class="neon-bg neon-1"></div>
+        <div class="neon-bg neon-2"></div>
+        <div class="neon-bg neon-3"></div>
+        
+        <!-- Sparkles -->
+        <div class="sparkle sparkle-1">✨</div>
+        <div class="sparkle sparkle-2">✨</div>
+        <div class="sparkle sparkle-3">✨</div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Rocket Icon -->
+            <div class="rocket-icon">🚀</div>
+            
+            <!-- Headline -->
+            <div class="headline">
+                <div class="headline-line1">QUER UM SITE</div>
+                <div class="headline-line2">QUE VENDE?</div>
+            </div>
+            
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-text">
+                        Orçamento <span class="feature-highlight">grátis</span><br>
+                        em 24h
+                    </div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-text">
+                        Projeto completo<br>
+                        em <span class="feature-highlight">7-10 dias</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main CTA -->
+            <div class="main-cta">
+                <div class="cta-text">
+                    <span class="arrow-right">👉</span> LINK NA BIO
+                </div>
+            </div>
+            
+            <!-- Alternative CTA -->
+            <div class="alt-cta">
+                ou <span class="chat-icon">💬</span> DM <span class="cta-keyword">"QUERO"</span>
+            </div>
+            
+            <!-- Limited Badge -->
+            <div class="limited-badge">
+                Limited: 5 vagas/mês
+            </div>
+            
+            <!-- ESPAÇO RESERVADO PARA STICKER -->
+            <div class="sticker-space">
+                <div class="sticker-placeholder">
+                    🔗 ÁREA PARA STICKER<br>
+                    <span style="font-size: 26px; opacity: 0.6;">Adicionar LINK aqui:<br>bit.ly/prismatic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
